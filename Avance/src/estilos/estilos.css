@@ -1,0 +1,107 @@
+*{
+    margin:0px;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: antiquewhite;
+}
+header img{
+    width: 330px;
+    margin-top: 10px ;
+    margin-left: 200px;
+    margin-right: 15px;
+}
+#main{
+    margin-top: 25px;
+    font-size: 20px;
+}
+header{
+    flex-direction: row;
+    display: flex;
+}
+.parte1 {
+    margin:100px auto;
+    width: 597px;
+    background-color: gray;
+    flex-direction: row;
+    display:flex;
+    background-image: url("../img/menu1.png");
+    background-size: 100%;
+    overflow: auto;
+}
+.parte2{
+    margin:100px auto;
+    width: 597px;
+    background-color: gray;
+    flex-direction: row;
+    background-size: 100%;
+    background-image: url("../img/menu2.png");
+    display:flex;
+    overflow: auto;
+
+}
+.parte1 li{
+    width: 298px;
+    height: 200px;
+    -webkit-transition: background-position 0.6s ease;
+    -moz-transition: background-position 0.6s ease;
+    -o-transition: background-position 0.6s ease;
+    transition: background-position 0.6s ease;
+
+}
+.parte2 li{
+    width: 298px;
+    height: 200px;
+    -webkit-transition: background-position 0.6s ease;
+    -moz-transition: background-position 0.6s ease;
+    -o-transition: background-position 0.6s ease;
+    transition: background-position 0.6s ease;
+
+}
+.parte1  a{
+    width: 298px;
+    height:200px;
+    display: block;
+    background: url("../img/marco.png");
+    text-indent: -9999px;
+}
+.parte2 a{
+    width: 298px;
+    height:200px;
+    display: block;
+    background: url("../img/marco.png");
+    text-indent: -9999px;
+}
+.parte1  li:hover  {
+    background-position: 0 -300px !important;
+    transition: background-position 0.6s;
+}
+.parte2  li:hover  {
+    background-position: 0 -300px !important;
+    transition: background-position 0.6s;
+}
+.parte1 li#salon{
+    background: url("../img/Image_1.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.parte1 li#Labo{
+    background: url("../img/Image_3.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.parte2 li#Visual{
+    background: url("../img/Image_2.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.parte2 li#Auditorio{
+    background: url("../img/Image_4.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+
+
