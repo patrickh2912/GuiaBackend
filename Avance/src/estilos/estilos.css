@@ -3,10 +3,17 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+
+    /*Variables para los colores*/
+    /*Navegacion*/
+    --cNavegacion--: white; /*white*/
+    --cLetrasMenu--: #858585; /*#858585*/
 }
 body{
-    background-color: #E8E8E8;
-
+    background-image: url("../img/LaboFIEE.jpg"); /*#E8E8E8*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
 }
 header{
     background-color: #26437E;
@@ -16,6 +23,13 @@ header{
     left:0;
     padding: 20px;
 }
+
+.logo{
+    width: 100px;
+    height: auto;
+    margin: auto;
+}
+
 .navegacion{
     position: absolute;
     top:100%;
@@ -25,16 +39,17 @@ header{
 #boton_menu{
     cursor:pointer;
     color:whitesmoke;
-    font-size: 25px;
+    font-size: 38px;
 }
 
-.navegacion ul{
-
+.navegacion .menu{
     width: 350px;
     height: 100%;
-    background-color: white;
+    background-color: var(--cNavegacion--);
     position:absolute;
     top :0;
+    left:-350px;
+    transition: left 0.5s;
 }
 .submenu{
     display: none;
@@ -44,7 +59,7 @@ header{
     font-size: 22px;
     padding: 20px;
     font-weight: 200;
-    color: #858585;
+    color: var(--cLetrasMenu--);
     border-bottom: 1px solid #A8A7A7;
 
 }
@@ -127,25 +142,24 @@ header img{
     transition: background-position 0.6s;
 }
 .parte1 li#salon{
-    background: url("../img/Image_1.png") no-repeat;
+    background: url("../img/Imagen1.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
 .parte1 li#Labo{
-    background: url("../img/Image_3.png") no-repeat;
+    background: url("../img/Imagen2.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
 .parte2 li#Visual{
-    background: url("../img/Image_2.png") no-repeat;
+    background: url("../img/Imagen4.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
 .parte2 li#Auditorio{
-    background: url("../img/Image_4.png") no-repeat;
+    background: url("../img/Imagen3.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
-
 
 
