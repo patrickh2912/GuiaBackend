@@ -42,12 +42,14 @@ header{
     font-size: 38px;
 }
 
-.navegacion ul{
+.navegacion .menu{
     width: 350px;
     height: 100%;
     background-color: var(--cNavegacion--);
     position:absolute;
     top :0;
+    left:-350px;
+    transition: left 0.5s;
 }
 .submenu{
     display: none;
