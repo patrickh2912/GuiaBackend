@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="estilos/font-awesome.css">
+    <link rel="stylesheet" href="estilos/font-awesome.css">
     <title>Pagina</title>
 </head>
 <body>
 <header>
-
-    <img src="img/logo.jpg" alt="">
-    <h1 id="main">Bienvenido usted ya puede acceder al
-        servicio de Classuni</h1>
+    <span id="boton_menu" class="fa fa-bars"></span>
+    <nav class="navegacion">
+        <ul class="menu">
+            <li><a href=""><span class="fa fa-home icono"></span>Inicio</a></li>
+            <li><a href=""><span class ="fa fa-user-circle icono"></span>Mi cuenta</a></li>
+            <li><a href=""><span class="fa fa-suitcase icono"></span>Servicios</a></li>
+            <li><a href=""><span class="fa fa-sign-out icono"></span>Salir</a>
+                <ul class="submenu">  <li class="icono-submenu">¿Seguro que desea salir?</li>
+                      <li class="go-back">Atras</li>
+                      <li><a href=""> <span class="fa fa-check"></span>>Si</span></a></li>
+                      <li><a href=""><span class="fa fa fa-times"></span>No</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 </header>
 <section>
 <ul class="parte1">
