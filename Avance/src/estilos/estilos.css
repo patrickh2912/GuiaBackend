@@ -70,9 +70,7 @@ header{
 .menu .icono{
     margin-right:12px ;
 }
-.icono-submenu{
-    font: '>';
-}
+
 header img{
     width: 330px;
     margin-top: 10px ;
