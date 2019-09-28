@@ -146,22 +146,22 @@ header img{
     transition: background-position 0.6s;
 }
 .parte1 li#salon{
-    background: url("../img/Image_1.png") no-repeat;
+    background: url("../img/Imagen1.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
 .parte1 li#Labo{
-    background: url("../img/Image_3.png") no-repeat;
+    background: url("../img/Imagen2.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
 .parte2 li#Visual{
-    background: url("../img/Image_2.png") no-repeat;
+    background: url("../img/Imagen4.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
 .parte2 li#Auditorio{
-    background: url("../img/Image_4.png") no-repeat;
+    background: url("../img/Imagen3.png") no-repeat;
     background-size: 100%;
     background-position: center;
 }
