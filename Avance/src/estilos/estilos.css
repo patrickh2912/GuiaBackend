@@ -10,9 +10,10 @@
     --cLetrasMenu--: #858585; /*#858585*/
 }
 body{
-    background-image: url("../img/LaboFIEE.jpg"); /*#E8E8E8*/
+    background-image: url("../img/fiis_1.jpg"); /*#E8E8E8*/
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
     background-attachment: fixed;
 }
 header{
@@ -38,6 +39,7 @@ header{
     height: 100vh;
     left:0;
 }
+
 #boton_menu{
     cursor:pointer;
     color: darkred;
