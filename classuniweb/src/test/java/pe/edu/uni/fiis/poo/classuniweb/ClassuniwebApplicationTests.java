@@ -1,10 +1,10 @@
-package pe.edu.uni.fiis.classuni;
+package pe.edu.uni.fiis.poo.classuniweb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClassuniApplicationTests {
+class ClassuniwebApplicationTests {
 
 	@Test
 	void contextLoads() {
