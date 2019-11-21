@@ -1,0 +1,94 @@
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../img/fonfo_pantalla1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.conteiner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+
+}
+.conteiner .ingreso{
+    border: black solid 1px;
+    width: 356px;
+    height: 504px;
+    margin: 50px;
+}
+
+.conteiner #ingreso2 p{
+    font-family: sans-serif ;
+    font-weight: bold;
+    font-size: 18px;
+    color: whitesmoke;
+    margin-top: 27px;
+    margin-bottom: 65px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: color 0.5s ease-out;
+    -moz-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+}
+.conteiner label{
+    margin-left: 50px;
+    font-size: 12px;
+    width: 52px;
+    height: 19px;
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+.conteiner #ingreso2 input{
+    margin-left: 51px;
+    width: 254px;
+    height: 30px;
+    color: whitesmoke;
+}
+.conteiner button{
+    margin-left: 51px;
+    border-radius: 10px;
+    width: 254px;
+    height: 60px;
+    font-size: 15px;
+
+}
+.conteiner #ingreso2 #bLog:hover{
+    background-color: darkslategrey;
+    color: whitesmoke;
+    cursor:pointer;
+    transition: 0.5s;
+}
+.conteiner #ingreso2 #bLog{
+    margin-top: 15px;
+}
+.conteiner #ingreso2 {
+    background-color: #C81F5F;
+    -webkit-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out;
+}
+#texto_entrada{
+    position: relative;
+    margin-right: 50px;
+    color: white;
+
+}
+#texto{
+    background-color: black;
+    padding: 5%;
+}
+#logo{
+    width: 300px;
+    border: black solid 1px;
+}
+.conteiner #ingreso2 #bLog{
+    background-color: blueviolet;
+}
