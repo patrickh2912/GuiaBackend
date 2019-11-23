@@ -15,6 +15,6 @@ public interface MyService {
     UsuarioResponse removerUsuario(UsuarioRequest request);
     List<Ambiente> obtenerAmbientes();//    GenerarUsurio generarIdUsuario();
 //    GenerarUsurio generarIdUsuario();
-    IdUsuarioResponse compararUsuarios (IdUsuarioRequest request);
+
 
 }

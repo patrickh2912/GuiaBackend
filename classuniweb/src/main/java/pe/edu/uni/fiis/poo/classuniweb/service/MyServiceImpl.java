@@ -50,7 +50,5 @@ public class MyServiceImpl implements MyService{
         return this.myDao.obtenerAmbientes();
     }
     //******************************************************************************************
-    public IdUsuarioResponse compararUsuarios(IdUsuarioRequest request) {
-        return null;
-    }
+
 }

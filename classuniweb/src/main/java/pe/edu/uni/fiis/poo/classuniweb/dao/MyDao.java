@@ -9,7 +9,6 @@ import java.util.List;
 
 public interface MyDao {
     Usuario loginUsuario(Usuario request);
-    Usuario compararUsuarios(Usuario request);
     UsuarioResponse SingUpUsuario (UsuarioRequest request);
     Usuario removerUsuario(Usuario request);
     List<Ambiente> obtenerAmbientes();//    GenerarUsurio generarIdUsuario();
