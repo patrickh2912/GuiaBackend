@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="514a2a0d-7e70-4481-af68-0878a1193675" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pe/edu/uni/fiis/classuni/ClassuniApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pe/edu/uni/fiis/classuni/ClassuniApplicationTests.java" beforeDir="false" />
+    <list default="true" id="6f4c79df-34dd-4cbc-a850-986b10e286a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,22 +10,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1TNuKJXRTvGV2Rkg1slc9KI9PGk" />
+  <component name="ProjectId" id="1Tu0TgdDT0fZinkzfQ3i4bsWFox" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/Nodejs/node.exe" />
+    <property name="last_opened_file_path" value="D:/nodejs/node.exe" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,14 +55,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="514a2a0d-7e70-4481-af68-0878a1193675" name="Default Changelist" comment="" />
-      <created>1573312814200</created>
+      <changelist id="6f4c79df-34dd-4cbc-a850-986b10e286a2" name="Default Changelist" comment="" />
+      <created>1574294682366</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573312814200</updated>
-      <workItem from="1573312828996" duration="527000" />
-      <workItem from="1573316993365" duration="689000" />
-      <workItem from="1573324479055" duration="914000" />
+      <updated>1574294682366</updated>
+      <workItem from="1574294683721" duration="2964000" />
+      <workItem from="1574519842080" duration="245000" />
+      <workItem from="1574520121717" duration="2000" />
     </task>
     <servers />
   </component>
