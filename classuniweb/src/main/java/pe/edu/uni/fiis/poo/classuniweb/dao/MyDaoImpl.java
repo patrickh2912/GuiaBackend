@@ -73,7 +73,54 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         return lista;
     }
 
+    //******************************************************************************************
 
+    @Override
+    public Usuario registrarUsuario(Usuario request) {
+        String sql =    " insert into usuario (idUsuario,\n" +
+                "       password,\n" +
+                "       codUsuario,\n" +
+                "       dni,\n" +
+                "       nombreUsuario,\n" +
+                "       apellidoUsuario,\n" +
+                "       correo,\n" +
+                "       condicion,\n" +
+                "       tipoUsuario)" +
+                "       values( ? , ? , ? ,? ,?, ?, ?, ?, ?)";
+        this.jdbcTemplate.update(sql,
+                new String[]{
+                        request.getIdUsuario(),request.getPassword(), request.getCodUsuario(), request.getDni(),
+                        request.getNombreUsuario(), request.getApellidoUsuario(), request.getCorreo(), request.getCondicion(),
+                        request.getTipoUsuario()
+                });
+        return request;
+    }
+//U000001
+    public Usuario crearUsuarioAutogenerado(Usuario request) {
+        String sql = " select 'U'||trim(to_char( " +
+                "          to_number(substr(max(cod_usuario),2,7),'9999999')+1" +
+                "           ,'0000009')) cod_usuario, " +
+                "   null credencial, null nombres, null apellidos, null estado" +
+                " from Usuario";
+        Usuario usuario = this.jdbcTemplate.queryForObject(sql, new UsuarioMapper());
+        request.setIdUsuario(usuario.getIdUsuario());
+
+        return registrarUsuario(request);
+    }
+
+    //******************************************************************************************
+
+    /*
+    private String idUsuario;
+    private String password;
+    private String codUsuario; // codigo UNI
+    private String dni;
+    private String nombreUsuario;
+    private String apellidoUsuario;
+    private String correo;
+    private String condicion;
+    private String tipoUsuario;
+     */
 
     //******************************************************************************************
     @Override

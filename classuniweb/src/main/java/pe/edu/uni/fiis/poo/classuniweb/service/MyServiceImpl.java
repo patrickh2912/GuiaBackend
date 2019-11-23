@@ -51,4 +51,8 @@ public class MyServiceImpl implements MyService{
     }
     //******************************************************************************************
 
+    @Override
+    public UsuarioResponse registrarUsuario (UsuarioRequest request) {
+        return null;
+    }
 }

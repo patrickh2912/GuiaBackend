@@ -45,6 +45,13 @@ public class MyController {
 
 //******************************************************************************************
 
+    @PostMapping(value = "/RegistrarUsuario",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public UsuarioResponse crearUsuario(@RequestBody UsuarioRequest request){
+        UsuarioResponse response = this.myService.registrarUsuario(request);
+        return response;
+    }
 /*
          @PostMapping(value = "/sign",
             consumes = MediaType.APPLICATION_JSON_VALUE,

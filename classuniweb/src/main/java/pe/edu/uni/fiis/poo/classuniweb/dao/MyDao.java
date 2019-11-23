@@ -12,5 +12,6 @@ public interface MyDao {
     UsuarioResponse SingUpUsuario (UsuarioRequest request);
     Usuario removerUsuario(Usuario request);
     List<Ambiente> obtenerAmbientes();//    GenerarUsurio generarIdUsuario();
+    Usuario registrarUsuario (Usuario request);
 
 }
