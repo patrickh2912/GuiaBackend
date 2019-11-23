@@ -1,5 +1,6 @@
 package pe.edu.uni.fiis.poo.classuniweb.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,7 @@ import pe.edu.uni.fiis.poo.classuniweb.service.MyService;
 
 @RestController
 public class MyController {
-
+        @Autowired
         private MyService myService;
 
 
@@ -28,6 +29,7 @@ public class MyController {
         if(response.getUsuario() == null){
             response.setError("No hay usuario");
         }
+
         return response;
     }
 

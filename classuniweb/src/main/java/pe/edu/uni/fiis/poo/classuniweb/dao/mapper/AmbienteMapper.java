@@ -14,7 +14,7 @@ public class AmbienteMapper implements RowMapper<Ambiente> {
         response.setCodAmbiente(resultSet.getString("codAmbiente"));
         response.setCodTipoAmbiente(resultSet.getString("codTipoAmbiente"));
         response.setUbicacion(resultSet.getString("ubicacion"));
-        response.setCapacidad(resultSet.getInt("capacidad"));
+        response.setCapacidad(resultSet.getBigDecimal("capacidad").intValue());
         response.setTipoPizarra(resultSet.getString("tipoPizarra"));
         response.setTipoMesa(resultSet.getString("tipoMesa"));
         response.setProyector(resultSet.getString("proyector"));

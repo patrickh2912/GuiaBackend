@@ -8,6 +8,7 @@ import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
 import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioRequest;
 import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
 
 
         }catch (Exception ex){
+            ex.printStackTrace();
             return usuario;
         }
         return usuario;
@@ -44,9 +46,12 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         List<Ambiente> lista = null;
         try{
             List<Map<String, Object>> filas = this.jdbcTemplate.queryForList(
-                    " select cod_producto, nombres, estado " +
-                            "from producto " +
-                            "where estado = '1' ");
+
+                    " select codAmbiente, codTipoAmbiente, ubicacion, capacidad, tipoPizarra, tipoMesa, proyector, accesoWifi " +
+                            "from ambiente ");
+            
+
+
             lista = new ArrayList<Ambiente>();
 
             for (Map<String, Object> fila : filas) {
@@ -54,7 +59,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                 p.setCodAmbiente((String)fila.get("codAmbiente"));
                 p.setCodTipoAmbiente((String)fila.get("codTipoAmbiente"));
                 p.setUbicacion((String)fila.get("ubicacion"));
-                p.setCapacidad((Integer)fila.get("capacidad"));
+                p.setCapacidad(((BigDecimal)fila.get("capacidad")).intValue());
                 p.setTipoPizarra((String)fila.get("tipoPizarra"));
                 p.setTipoMesa((String)fila.get("tipoMesa"));
                 p.setProyector((String)fila.get("proyector"));
@@ -62,6 +67,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                 lista.add(p);
             }
         }catch (Exception ex){
+            ex.printStackTrace();
             return lista;
         }
         return lista;
