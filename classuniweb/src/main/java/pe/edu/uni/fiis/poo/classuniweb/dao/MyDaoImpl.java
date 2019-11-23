@@ -15,7 +15,7 @@ import java.util.Map;
 @Repository
 public class MyDaoImpl extends MyDatasource implements MyDao{
 
-
+    //******************************************************************************************
     public Usuario loginUsuario(Usuario request) {
         Usuario usuario = null;
         try{
@@ -39,7 +39,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         }
         return usuario;
     }
-
+    //******************************************************************************************
     public List<Ambiente> obtenerAmbientes() {
         List<Ambiente> lista = null;
         try{
@@ -69,20 +69,18 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
 
 
 
-
+    //******************************************************************************************
     @Override
     public UsuarioResponse SingUpUsuario(UsuarioRequest request) {
         return null;
     }
-
+    //******************************************************************************************
     @Override
     public Usuario removerUsuario(Usuario request) {
         return null;
     }
+    //******************************************************************************************
 
-<<<<<<< HEAD
-
-=======
     @Override
     public Usuario compararUsuarios(Usuario request) {
         Usuario usuario = null;
@@ -106,5 +104,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         }
         return usuario;
     }
->>>>>>> d4faa72f4735ceffbb96912fadbd747bf36301d6
+
+    //******************************************************************************************
+
 }

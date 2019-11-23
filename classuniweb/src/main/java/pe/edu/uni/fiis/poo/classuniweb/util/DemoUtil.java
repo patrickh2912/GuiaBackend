@@ -14,14 +14,11 @@ public class DemoUtil {
         return response;
     }
 
-<<<<<<< HEAD
 
-=======
     public static Usuario mapToIdUsuario(IdUsuarioRequest request){
         Usuario response = new Usuario();
         response.setIdUsuario(request.getIdUsuario());
         return response;
     }
->>>>>>> d4faa72f4735ceffbb96912fadbd747bf36301d6
 
 }

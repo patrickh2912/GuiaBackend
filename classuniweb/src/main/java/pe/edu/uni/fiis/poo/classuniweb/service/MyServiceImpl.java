@@ -11,23 +11,23 @@ import pe.edu.uni.fiis.poo.classuniweb.util.DemoUtil;
 import java.util.List;
 
 @Service
-public class MyServiceImpl implements MyService{
 
+public class MyServiceImpl implements MyService{
     @Autowired
     private MyDao myDao;
 
-
+//******************************************************************************************
     public UsuarioResponse loginUsuario(UsuarioRequest request) {
         Usuario usuario = this.myDao.loginUsuario(DemoUtil.mapToUsuario(request));
         UsuarioResponse response = new UsuarioResponse();
         response.setUsuario(usuario);
         return response;
     }
-
-    @Override
+    //******************************************************************************************
     public UsuarioResponse SingUpUsuario(UsuarioSign request) {
         return null;
     }
+//******************************************************************************************
 
     /*
         @Override
@@ -38,20 +38,19 @@ public class MyServiceImpl implements MyService{
             return response;
         }
     */
+
+
+//******************************************************************************************
     public UsuarioResponse removerUsuario(UsuarioRequest request) {
         return null;
     }
 
-<<<<<<< HEAD
-    @Override
+//******************************************************************************************
     public List<Ambiente> obtenerAmbientes() {
-        return null;
-=======
+        return this.myDao.obtenerAmbientes();
+    }
+    //******************************************************************************************
     public IdUsuarioResponse compararUsuarios(IdUsuarioRequest request) {
-        Usuario usuario = this.myDao.compararUsuarios(DemoUtil.mapToIdUsuario(request));
-        IdUsuarioResponse response = new IdUsuarioResponse();
-        response.setUsuario(usuario);
-        return response;
->>>>>>> d4faa72f4735ceffbb96912fadbd747bf36301d6
+        return null;
     }
 }
