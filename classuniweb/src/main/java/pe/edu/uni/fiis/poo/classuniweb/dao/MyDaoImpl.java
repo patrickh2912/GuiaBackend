@@ -80,5 +80,31 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         return null;
     }
 
+<<<<<<< HEAD
 
+=======
+    @Override
+    public Usuario compararUsuarios(Usuario request) {
+        Usuario usuario = null;
+        try{
+            usuario = this.jdbcTemplate.queryForObject(
+                    " select idUsuario, " +
+                            "       password, " +
+                            "       codUsuario, " +
+                            "       dni, " +
+                            "       nombreUsuario, " +
+                            "       apellidoUsuario, " +
+                            "       correo ," +
+                            "    condicion ," +
+                            "      tipoUsuario from Usuario " +
+                            " where idUsuario = ? ", new String[]{request.getIdUsuario()
+                    }, new UsuarioMapper());
+
+
+        }catch (Exception ex){
+            return usuario;
+        }
+        return usuario;
+    }
+>>>>>>> d4faa72f4735ceffbb96912fadbd747bf36301d6
 }
