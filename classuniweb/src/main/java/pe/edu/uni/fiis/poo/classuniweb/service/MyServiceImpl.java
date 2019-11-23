@@ -3,11 +3,15 @@ package pe.edu.uni.fiis.poo.classuniweb.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.uni.fiis.poo.classuniweb.dao.MyDao;
+import pe.edu.uni.fiis.poo.classuniweb.domain.Ambiente;
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
 import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioRequest;
 import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioResponse;
 import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioSign;
 import pe.edu.uni.fiis.poo.classuniweb.util.DemoUtil;
+
+import java.util.List;
+
 @Service
 public class MyServiceImpl implements MyService{
 
@@ -37,6 +41,11 @@ public class MyServiceImpl implements MyService{
         }
     */
     public UsuarioResponse removerUsuario(UsuarioRequest request) {
+        return null;
+    }
+
+    @Override
+    public List<Ambiente> obtenerAmbientes() {
         return null;
     }
 }

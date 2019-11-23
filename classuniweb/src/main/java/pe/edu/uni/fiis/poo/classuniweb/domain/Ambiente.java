@@ -1,29 +1,28 @@
 package pe.edu.uni.fiis.poo.classuniweb.domain;
-
 public class Ambiente {
-    private String cod_ambiente;
-    private String cod_tipo_ambiente;
+    private String codAmbiente;
+    private String codTipoAmbiente;
     private String ubicacion;
-    private String tipo_pizarra;
-    private String tipo_mesa;
-    private boolean wifi;
-    private boolean proyector;
-    private Integer capasidad;
+    private Integer capacidad;
+    private String tipoPizarra;
+    private String tipoMesa;
+    private String proyector;
+    private String accesoWifi;
 
-    public String getCod_ambiente() {
-        return cod_ambiente;
+    public String getCodAmbiente() {
+        return codAmbiente;
     }
 
-    public void setCod_ambiente(String cod_ambiente) {
-        this.cod_ambiente = cod_ambiente;
+    public void setCodAmbiente(String codAmbiente) {
+        this.codAmbiente = codAmbiente;
     }
 
-    public String getCod_tipo_ambiente() {
-        return cod_tipo_ambiente;
+    public String getCodTipoAmbiente() {
+        return codTipoAmbiente;
     }
 
-    public void setCod_tipo_ambiente(String cod_tipo_ambiente) {
-        this.cod_tipo_ambiente = cod_tipo_ambiente;
+    public void setCodTipoAmbiente(String codTipoAmbiente) {
+        this.codTipoAmbiente = codTipoAmbiente;
     }
 
     public String getUbicacion() {
@@ -34,44 +33,44 @@ public class Ambiente {
         this.ubicacion = ubicacion;
     }
 
-    public String getTipo_pizarra() {
-        return tipo_pizarra;
+    public Integer getCapacidad() {
+        return capacidad;
     }
 
-    public void setTipo_pizarra(String tipo_pizarra) {
-        this.tipo_pizarra = tipo_pizarra;
+    public void setCapacidad(Integer capacidad) {
+        this.capacidad = capacidad;
     }
 
-    public String getTipo_mesa() {
-        return tipo_mesa;
+    public String getTipoPizarra() {
+        return tipoPizarra;
     }
 
-    public void setTipo_mesa(String tipo_mesa) {
-        this.tipo_mesa = tipo_mesa;
+    public void setTipoPizarra(String tipoPizarra) {
+        this.tipoPizarra = tipoPizarra;
     }
 
-    public boolean isWifi() {
-        return wifi;
+    public String getTipoMesa() {
+        return tipoMesa;
     }
 
-    public void setWifi(boolean wifi) {
-        this.wifi = wifi;
+    public void setTipoMesa(String tipoMesa) {
+        this.tipoMesa = tipoMesa;
     }
 
-    public boolean isProyector() {
+    public String getProyector() {
         return proyector;
     }
 
-    public void setProyector(boolean proyector) {
+    public void setProyector(String proyector) {
         this.proyector = proyector;
     }
 
-    public Integer getCapasidad() {
-        return capasidad;
+    public String getAccesoWifi() {
+        return accesoWifi;
     }
 
-    public void setCapasidad(Integer capasidad) {
-        this.capasidad = capasidad;
+    public void setAccesoWifi(String accesoWifi) {
+        this.accesoWifi = accesoWifi;
     }
 }
 

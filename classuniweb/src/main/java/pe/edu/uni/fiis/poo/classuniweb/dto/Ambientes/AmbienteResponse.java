@@ -1,23 +1,26 @@
 package pe.edu.uni.fiis.poo.classuniweb.dto.Ambientes;
 import pe.edu.uni.fiis.poo.classuniweb.domain.Ambiente;
 
+import java.util.List;
+
 public class AmbienteResponse {
-    private Ambiente ambiente;
-    private String erro;
 
-    public Ambiente getAmbiente() {
-        return ambiente;
+    private String error;
+    private List<Ambiente> lista;
+
+    public String getError() {
+        return error;
     }
 
-    public void setAmbiente(Ambiente ambiente) {
-        this.ambiente = ambiente;
+    public void setError(String error) {
+        this.error = error;
     }
 
-    public String getErro() {
-        return erro;
+    public List<Ambiente> getLista() {
+        return lista;
     }
 
-    public void setErro(String erro) {
-        this.erro = erro;
+    public void setLista(List<Ambiente> lista) {
+        this.lista = lista;
     }
 }
