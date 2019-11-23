@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.uni.fiis.poo.classuniweb.dao.MyDao;
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
-import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioRequest;
-import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioResponse;
-import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioSign;
+import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.*;
 import pe.edu.uni.fiis.poo.classuniweb.util.DemoUtil;
 @Service
 public class MyServiceImpl implements MyService{
@@ -38,5 +36,12 @@ public class MyServiceImpl implements MyService{
     */
     public UsuarioResponse removerUsuario(UsuarioRequest request) {
         return null;
+    }
+
+    public IdUsuarioResponse compararUsuarios(IdUsuarioRequest request) {
+        Usuario usuario = this.myDao.compararUsuarios(DemoUtil.mapToIdUsuario(request));
+        IdUsuarioResponse response = new IdUsuarioResponse();
+        response.setUsuario(usuario);
+        return response;
     }
 }

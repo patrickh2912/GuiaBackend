@@ -44,4 +44,28 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
     public Usuario removerUsuario(Usuario request) {
         return null;
     }
+
+    @Override
+    public Usuario compararUsuarios(Usuario request) {
+        Usuario usuario = null;
+        try{
+            usuario = this.jdbcTemplate.queryForObject(
+                    " select idUsuario, " +
+                            "       password, " +
+                            "       codUsuario, " +
+                            "       dni, " +
+                            "       nombreUsuario, " +
+                            "       apellidoUsuario, " +
+                            "       correo ," +
+                            "    condicion ," +
+                            "      tipoUsuario from Usuario " +
+                            " where idUsuario = ? ", new String[]{request.getIdUsuario()
+                    }, new UsuarioMapper());
+
+
+        }catch (Exception ex){
+            return usuario;
+        }
+        return usuario;
+    }
 }
