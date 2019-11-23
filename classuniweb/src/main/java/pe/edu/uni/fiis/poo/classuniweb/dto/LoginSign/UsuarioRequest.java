@@ -1,4 +1,4 @@
-package pe.edu.uni.fiis.poo.classuniweb.dto;
+package pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign;
 
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
 
@@ -7,6 +7,8 @@ public class UsuarioRequest {
     private  String password;
 
     public String getPassword() {
+        //codificacion
+
         return password;
     }
 

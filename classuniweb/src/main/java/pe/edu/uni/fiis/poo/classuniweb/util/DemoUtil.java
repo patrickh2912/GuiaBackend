@@ -2,7 +2,7 @@ package pe.edu.uni.fiis.poo.classuniweb.util;
 
 
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
-import pe.edu.uni.fiis.poo.classuniweb.dto.UsuarioRequest;
+import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioRequest;
 
 public class DemoUtil {
 

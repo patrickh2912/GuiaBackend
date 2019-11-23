@@ -1,4 +1,4 @@
-package pe.edu.uni.fiis.poo.classuniweb.dto;
+package pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign;
 
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
 

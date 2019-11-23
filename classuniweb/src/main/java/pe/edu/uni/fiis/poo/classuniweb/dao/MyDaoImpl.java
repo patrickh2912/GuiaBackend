@@ -4,6 +4,8 @@ import org.springframework.stereotype.Repository;
 import pe.edu.uni.fiis.poo.classuniweb.dao.datasource.MyDatasource;
 import pe.edu.uni.fiis.poo.classuniweb.dao.mapper.UsuarioMapper;
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
+import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioRequest;
+import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.UsuarioResponse;
 
 @Repository
 public class MyDaoImpl extends MyDatasource implements MyDao{
@@ -28,10 +30,14 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
 
 
         }catch (Exception ex){
-            System.out.println("PATRICK GIL");
             return usuario;
         }
         return usuario;
+    }
+
+    @Override
+    public UsuarioResponse SingUpUsuario(UsuarioRequest request) {
+        return null;
     }
 
     @Override

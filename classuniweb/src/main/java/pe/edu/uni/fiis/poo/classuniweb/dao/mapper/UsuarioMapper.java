@@ -21,8 +21,6 @@ public class UsuarioMapper  implements RowMapper<Usuario> {
         response.setCorreo(resultSet.getString("correo"));
         response.setCondicion(resultSet.getString("condicion"));
         response.setTipoUsuario(resultSet.getString("tipoUsuario"));
-
-
         return response;
     }
 }
