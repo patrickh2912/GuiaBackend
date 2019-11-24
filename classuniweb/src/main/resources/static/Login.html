@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!--<link rel="stylesheet" href="assets/styles/styles.css">-->
+    <link rel="stylesheet" href="vendor/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/Estilos.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <div class="row">
+                <div class="valign-wrapper">
+                    <div class="col s12">
+                        <img src="assets/img/Logo_proyecto.png" id="logo" alt="logo_uni_reserva" class="responsive-img" style="width: 80%">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="row">
+                <div class="col s12">
+                    <div class="card Large">
+                        <div class="card-content">
+                            <div class="row"><h1 class="">BIENVENIDO</h1></div>
+                            <div class="row">
+                                <blockquote style="border-left: 5px solid #5f50da;">Reservacion al alcance de un click</blockquote>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="user_log" type="text" class="validate" maxlength="6">
+                                    <label for="user_log">Codigo:</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 input-field">
+                                    <i class="material-icons prefix">vpn_key</i>
+                                    <input type="password" id="user_pass" class="validate">
+                                    <label for="user_pass">Contraseña:</label>
+                                </div>
+                            </div>
+                            <button id="bLog" class="btn waves-effect waves-red" >Login</button>
+                            <label for="enlace">Don't you have an account?<a href="#" id="enlace"> Create it now</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="vendor/materialize/js/materialize.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
