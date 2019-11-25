@@ -111,10 +111,8 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
             List<Map<String, Object>> filas = this.jdbcTemplate.queryForList(
 
                     " select codAmbiente, codTipoAmbiente, ubicacion, capacidad, tipoPizarra, tipoMesa, proyector, accesoWifi " +
-                            "from ambiente " +
-                            "WHERE codTipoAmbiente = ?", new String[]{request.getCodTipoAmbiente() }, new AmbienteMapper());
-
-
+                            " from ambiente " +
+                            " where codTipoAmbiente = ? ", new String[]{request.getCodTipoAmbiente() }, new AmbienteMapper());
 
             lista = new ArrayList<Ambiente>();
 
