@@ -6,7 +6,7 @@ public class AmbienteHorario {
     private String codAmbiente;
     private String dia;
     private String horaInicio;
-    private String horaFin;
+    private String horaFinal;
 
     public String getCodAmbiente() {
         return codAmbiente;
@@ -40,11 +40,11 @@ public class AmbienteHorario {
         this.horaInicio = horaInicio;
     }
 
-    public String getHoraFin() {
-        return horaFin;
+    public String getHoraFinal() {
+        return horaFinal;
     }
 
-    public void setHoraFin(String horaFin) {
-        this.horaFin = horaFin;
+    public void setHoraFinal(String horaFin) {
+        this.horaFinal = horaFinal;
     }
 }

@@ -143,7 +143,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         try{
             List<Map<String, Object>> filas = this.jdbcTemplate.queryForList(
 
-                    " select  H.codAmbiente, H.codHorario, H.dia, h.horaInicio, h.horaFin " +
+                    " select  H.codAmbiente, H.codHorario, H.dia, h.horaInicio, h.horaFinal " +
                             " from ambienteHorario H " +
                             " inner join  horario h on H.codHorario = h.codHorario " +
                             " WHERE codAmbiente = ?", new String[]{request.getCodAmbiente() }, new AmbienteHorarioMapper());
@@ -157,7 +157,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                 p.setCodHorario((String)fila.get("codHorario"));
                 p.setDia((String)fila.get("dia"));
                 p.setHoraInicio((String)fila.get("horaInicio"));
-                p.setHoraFin((String)fila.get("cantHoras"));
+                p.setHoraFinal((String)fila.get("horaFinal"));
                 lista.add(p);
             }
         }catch (Exception ex){
@@ -174,12 +174,12 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
             pedido = this.jdbcTemplate.queryForObject(
                     " select codPedido, " +
                             "       idUsuario, " +
-                            "       codUsuario, " +
                             "       codAmbiente, " +
                             "       codHorario, " +
                             "       fecha, " +
                             "       motivo ," +
-                            "    codEstado ," +
+                            "       estado ," +
+                            " from pedido " +
                             " where codHorario = ?, " +
                             " fecha = ? " +
                             " and codAmbiente = ?", new String[]{request.getCodHorario(),request.getFecha(),request.getCodAmbiente()

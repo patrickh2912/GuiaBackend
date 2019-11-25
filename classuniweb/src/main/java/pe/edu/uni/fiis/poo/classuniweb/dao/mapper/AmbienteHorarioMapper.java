@@ -15,7 +15,7 @@ public class AmbienteHorarioMapper implements RowMapper {
         response.setCodAmbiente(resultSet.getString("codAmbiente"));
         response.setDia(resultSet.getString("dia"));
         response.setHoraInicio(resultSet.getString("horaInicio"));
-        response.setHoraFin(resultSet.getString("horaFin"));
+        response.setHoraFinal(resultSet.getString("horaFinal"));
         return response;
     }
 }
