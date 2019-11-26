@@ -12,9 +12,17 @@ public class DemoUtil {
     public static Usuario mapToUsuario(UsuarioRequest request){
         Usuario response = new Usuario();
         response.setIdUsuario(request.getIdUsuario());
+        response.setCodUsuario(request.getCodUsuario());
         response.setPassword(request.getPassword());
+        response.setDni(request.getDni());
+        response.setNombreUsuario(request.getNombreUsuario());
+        response.setApellidoUsuario(request.getApellidoUsuario());
+        response.setCorreo(request.getCorreo());
+        response.setTipoUsuario(request.getTipoUsuario());
+        response.setCondicion(request.getCondicion());
         return response;
     }
+
     public static Pedido mapToPedido(PedidoRequest request){
         Pedido response = new Pedido();
         response.setCodHorario(request.getCodHorario());

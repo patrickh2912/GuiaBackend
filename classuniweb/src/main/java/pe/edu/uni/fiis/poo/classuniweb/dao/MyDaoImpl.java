@@ -97,8 +97,14 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                 "       values( ? , ? , ? ,? ,?, ?, ?, ?, ?)";
         this.jdbcTemplate.update(sql,
                 new String[]{
-                        request.getIdUsuario(),request.getPassword(), request.getCodUsuario(), request.getDni(),
-                        request.getNombreUsuario(), request.getApellidoUsuario(), request.getCorreo(), request.getCondicion(),
+                        request.getIdUsuario(),
+                        request.getPassword(),
+                        request.getCodUsuario(),
+                        request.getDni(),
+                        request.getNombreUsuario(),
+                        request.getApellidoUsuario(),
+                        request.getCorreo(),
+                        request.getCondicion(),
                         request.getTipoUsuario()
                 });
         return request;

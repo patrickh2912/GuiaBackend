@@ -62,7 +62,10 @@ public class MyServiceImpl implements MyService{
 
     @Override
     public UsuarioResponse registrarUsuario (UsuarioRequest request) {
-        return null;
+        Usuario usuario = this.myDao.registrarUsuario(DemoUtil.mapToUsuario(request));
+        UsuarioResponse response = new UsuarioResponse();
+        response.setUsuario(usuario);
+        return response;
     }
 
 
