@@ -82,4 +82,13 @@ public class Usuario {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
+
+    public String encriptarPassword(){
+        return password.substring(password.length()/2, password.length()) + password.substring(0,password.length()/2);
+    }
+
+    public String desencriptarPassword(){
+        return password.substring(password.length()/2, password.length()) + password.substring(0,password.length()/2);
+    }
+
 }

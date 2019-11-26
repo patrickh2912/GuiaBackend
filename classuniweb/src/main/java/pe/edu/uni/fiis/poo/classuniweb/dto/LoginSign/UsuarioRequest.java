@@ -20,6 +20,8 @@ public class UsuarioRequest {
     }
 
     public void setPassword(String password) {
+        //decodificación
+
         this.password = password;
     }
 
