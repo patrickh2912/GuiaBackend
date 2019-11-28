@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="vendor/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/Estilos.css">
+
+</head>
+<body>
+    <div class="container" id="controlador">
+        <div class="row">
+            <div class="s12" >
+                <div class="col s3" >
+                    <div class="row">
+                        <div class="s12">
+                            <div class="row">
+                                <img src="assets/img/Logo_proyecto.png" alt="" class="responsive-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="s12">
+                            <div class="row">
+                                <div class="card small cyan lighten-3">
+                                    <div class="card-content">
+                                        <blockquote> Proceda a insertar sus datos  </blockquote>
+                                        <p>No espere mas para acceder a los grandes beneficios de Classuni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col s1">
+
+                </div>
+                <div class="col s8">
+                    <div class="row">
+                        <div class="s12">
+                            <div class="row">
+                                <div class="card Large cyan lighten-5">
+                                    <div class="card-content">
+                                        <div class="row"><h5>Registrar</h5></div>
+                                        <div class="row">
+
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="Name" type="text" class="validate" maxlength="30" v-model="nombre">
+                                                <label for="Name">Nombre:</label>
+                                            </div>
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="Last_name" type="text" class="validate" maxlength="30" v-model="apellido">
+                                                <label for="Last_name">Apellido:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">perm_identity</i>
+                                                <input id="DNI" type="text" class="validate" maxlength="30" v-model="dni">
+                                                <label for="DNI">DNI:</label>
+                                            </div>
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">email</i>
+                                                <input id="correo" type="email" class="validate" maxlength="30" v-model="correo">
+                                                <label for="correo">Correo:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">picture_in_picture</i>
+                                                <input id="codigo" type="text" class="validate" maxlength="30" v-nodel="id">
+                                                <label for="codigo">ID Usuario:</label>
+                                            </div>
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">school</i>
+                                                <input id="codigo_uni" type="text" class="validate" maxlength="10" v-model="codigo_uni">
+                                                <label for="codigo_uni">Codigo UNI:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">vpn_key</i>
+                                                <input id="pass" type="password" class="validate" maxlength="30" v-model="clave">
+                                                <label for="pass">Contraseña:</label>
+                                            </div>
+                                            <div class="col s6 input-field">
+                                                <i class="material-icons prefix">vpn_key</i>
+                                                <input id="pass_2" type="password" class="validate" maxlength="10">
+                                                <label for="pass_2">Confirmar contraseña:</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="center-align"><button class="btn-large waves-effect light-blue darken-4">Crear cuenta</button></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+<script src="vendor/materialize/js/materialize.min.js"></script>
+<script src="assets/js/app.js"></script>
+</html>
