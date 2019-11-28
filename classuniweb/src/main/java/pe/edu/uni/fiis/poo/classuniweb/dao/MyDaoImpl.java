@@ -140,6 +140,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         }
         return lista;
     }
+
     //******************************************************************************************
     @Override
     public List<AmbienteHorario> ObtenerHorarios(AmbienteHorarioRequest request) {
@@ -147,10 +148,10 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         try{
             List<Map<String, Object>> filas = this.jdbcTemplate.queryForList(
 
-                    " select  H.codAmbiente, H.codHorario, H.dia, h.horaInicio, h.horaFinal " +
-                            " from ambienteHorario H " +
-                            " inner join  horario h on H.codHorario = h.codHorario " +
-                            " WHERE codAmbiente = ?", new String[]{request.getCodAmbiente() }, new AmbienteHorarioMapper());
+                    " select  a.codAmbiente, a.codHorario, a.dia, h.horaInicio, h.horaFinal " +
+                            " from ambienteHorario a " +
+                            " inner join  horario h on a.codHorario = h.codHorario " +
+                            " WHERE codAmbiente = ? ", new String[]{request.getCodAmbiente() }, new AmbienteHorarioMapper());
 
 
             lista = new ArrayList<AmbienteHorario>();

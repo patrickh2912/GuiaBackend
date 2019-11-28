@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class AmbienteHorarioMapper implements RowMapper {
     @Override
-    public Object mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+    public AmbienteHorario mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         AmbienteHorario response = new AmbienteHorario();
         response.setCodHorario(resultSet.getString("codHorario"));
         response.setCodAmbiente(resultSet.getString("codAmbiente"));
