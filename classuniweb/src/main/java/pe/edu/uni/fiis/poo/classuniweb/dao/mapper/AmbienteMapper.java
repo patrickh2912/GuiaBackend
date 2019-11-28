@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AmbienteMapper implements RowMapper<Ambiente> {
-
+    @Override
     public Ambiente mapRow(ResultSet resultSet, int rowNum) throws SQLException {
         Ambiente response = new Ambiente();
         response.setCodAmbiente(resultSet.getString("codAmbiente"));
