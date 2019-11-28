@@ -29,18 +29,21 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         Usuario usuario = null;
         try{
             usuario = this.jdbcTemplate.queryForObject(
-                        " select idUsuario, " +
-                            "       password, " +
-                            "       codUsuario, " +
-                            "       dni, " +
-                            "       nombreUsuario, " +
-                            "       apellidoUsuario, " +
-                            "       correo ," +
-                            "    condicion ," +
-                            "      tipoUsuario from Usuario " +
-                            " where idUsuario = ? " +
-                            " and password = ? ", new String[]{request.getIdUsuario(),request.getPassword()
-                            }, new UsuarioMapper());
+                " select idUsuario, " +
+                    "       password, " +
+                    "       codUsuario, " +
+                    "       dni, " +
+                    "       nombreUsuario, " +
+                    "       apellidoUsuario, " +
+                    "       correo ," +
+                    "    condicion ," +
+                    "      tipoUsuario from Usuario " +
+                    " where idUsuario = ? " +
+                    " and password = ? ",
+                    new String[]{
+                            request.getIdUsuario(),
+                            request.encriptarPassword()
+            }, new UsuarioMapper());
 
 
         }catch (Exception ex){
@@ -83,29 +86,48 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
 
     //******************************************************************************************
 
+
+    @Override
+    public Usuario generarIdUsuario(Usuario request) {
+        String sql = " select 'U'||trim(to_char( " +
+                "          to_number(substr(max(cod_usuario),2,7),'9999999')+1" +
+                "           ,'0000009')) idUsuario, " +
+                " null codUsuario, null password, null dni, null nombreUsuario, null apellidoUsuario, null correo, null tipoUsuario, null condicion, null usuarioCreacion" +
+                " from usuario";
+        Usuario usuario = this.jdbcTemplate.queryForObject(sql, new UsuarioMapper());
+        request.setIdUsuario(usuario.getIdUsuario());
+
+        return request;
+    }
+
     @Override
     public Usuario registrarUsuario(Usuario request) {
-        String sql =    " insert into usuario (idUsuario,\n" +
-                "       password,\n" +
-                "       codUsuario,\n" +
-                "       dni,\n" +
-                "       nombreUsuario,\n" +
-                "       apellidoUsuario,\n" +
-                "       correo,\n" +
-                "       condicion,\n" +
-                "       tipoUsuario)" +
-                "       values( ? , ? , ? ,? ,?, ?, ?, ?, ?)";
+
+        request = generarIdUsuario(request);
+
+        String sql = "insert into persona (idUsuario, \n" +
+                " codUsuario,\n" +
+                " dni,\n" +
+                " nombreUsuario,\n " +
+                " apellidoUsuario,\n" +
+                " correo,\n" +
+                " tipoUsuario,\n" +
+                " condicion,\n" +
+                " password,\n " +
+                " usuarioCreacion,\n " +
+                " fechaCreacion)" +
+                "values(?, ?, ?, ?, ?, ?, ?, ?, ?, USER, CURRENT_TIMESTAMP)";
         this.jdbcTemplate.update(sql,
                 new String[]{
                         request.getIdUsuario(),
-                        request.getPassword(),
                         request.getCodUsuario(),
                         request.getDni(),
                         request.getNombreUsuario(),
                         request.getApellidoUsuario(),
                         request.getCorreo(),
+                        request.getTipoUsuario(),
                         request.getCondicion(),
-                        request.getTipoUsuario()
+                        request.encriptarPassword()
                 });
         return request;
     }
@@ -221,18 +243,6 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
 
     //******************************************************************************************
     //U000001
-    public Usuario crearUsuarioAutogenerado(Usuario request) {
-        String sql = " select 'U'||trim(to_char( " +
-                "          to_number(substr(max(cod_usuario),2,7),'9999999')+1" +
-                "           ,'0000009')) cod_usuario, " +
-                "   null credencial, null nombres, null apellidos, null estado" +
-                " from Usuario";
-        Usuario usuario = this.jdbcTemplate.queryForObject(sql, new UsuarioMapper());
-        request.setIdUsuario(usuario.getIdUsuario());
-
-        return registrarUsuario(request);
-    }
-
 
     //******************************************************************************************
     @Override

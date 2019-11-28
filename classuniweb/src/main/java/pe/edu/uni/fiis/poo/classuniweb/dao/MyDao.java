@@ -14,7 +14,8 @@ import java.util.List;
 
 public interface MyDao {
     Usuario loginUsuario(Usuario request);
-    List<Ambiente> obtenerAmbientes();//    GenerarUsurio generarIdUsuario();
+    List<Ambiente> obtenerAmbientes();//
+    Usuario generarIdUsuario (Usuario request);
     Usuario registrarUsuario (Usuario request);
     List<Ambiente> ObtenterCodAmbiente(AmbienteRequest request);
     List<AmbienteHorario> ObtenerHorarios(AmbienteHorarioRequest request);

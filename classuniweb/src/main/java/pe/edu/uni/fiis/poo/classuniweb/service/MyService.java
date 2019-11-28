@@ -18,7 +18,7 @@ import java.util.List;
 public interface MyService {
     UsuarioResponse loginUsuario(UsuarioRequest request);
     PedidoResponse HacerPedido(PedidoRequest request);
-    List<Ambiente> obtenerAmbientes();//    GenerarUsurio generarIdUsuario();
+    List<Ambiente> obtenerAmbientes();//
     List<Ambiente> ObtenterCodAmbiente(AmbienteRequest request);
     List<AmbienteHorario> ObtenerHorarios(AmbienteHorarioRequest request);
     UsuarioResponse registrarUsuario (UsuarioRequest request);
