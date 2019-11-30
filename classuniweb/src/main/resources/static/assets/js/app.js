@@ -49,7 +49,7 @@ new Vue({
     data :{
         username:'',
         pass:'',
-        ventana:'log_in'
+        ventana:'log'
     },
     methods:{
         login :function () {
@@ -70,7 +70,7 @@ new Vue({
         .then(response => {
                 console.log('Success:', response);
                 alert('Exitoso');
-                this.ventana='home';
+                this.ventana='busqueda';
         })
         }
     }
