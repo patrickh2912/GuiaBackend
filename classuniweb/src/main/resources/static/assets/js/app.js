@@ -10,6 +10,7 @@ new Vue({
         tipo: 'Alumno',
         condicion: 'Activo',
         confirmacion: null
+
     },
     methods: {
         crear: function () {

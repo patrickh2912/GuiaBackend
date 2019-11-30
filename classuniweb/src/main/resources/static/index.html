@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    <div v-show="ventana=='busqueda'">
+    <div v-show="ventana=='busqueda'" id="busqueda">
         <div class="container">
             <div class="row">
                 <div class="col s6">
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            <select id="Horario" class="browser-default" v>
+                                            <select id="Horario" class="browser-default" >
                                                 <option value="" disabled selected>Horario</option>
                                                 <option value="" v-for="amb in ambiente">{{amb.tipo}}    {{amb.hora_i}}  {{amb.hora_t}}</option>
                                             </select>
