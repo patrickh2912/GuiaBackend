@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <select id="ambiente" class="browser-default">
+                                                <select id="ambiente" class="browser-default" v-on:change="buscarAmbiente()" v-model="tipoAmbiente">
                                                 <option value="" disabled selected>Tipo Ambiente</option>
                                                 <option value="1">Salon</option>
                                                 <option value="2">Laboratorio</option>
@@ -82,9 +82,11 @@
                                             <label for="ambiente" ></label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select id="cod_ambiente" class="browser-default" >
+                                            <select id="cod_ambiente" class="browser-default" v-model="ambienteHorario" v-on:change="buscarHorario()" >
+                                                <template v-for="l in ambienteList">
+                                                    <option v-bind:value="l.codigo">{{l.descripcion}}</option>
+                                                </template>
                                                 <option value="" disabled selected>Codigo Ambiente</option>
-                                                <option value="1">123</option>
                                             </select>
                                             <label for="cod_ambiente" ></label>
                                         </div>
@@ -92,8 +94,9 @@
                                     <div class="row">
                                         <div class="col s12">
                                             <select id="Horario" class="browser-default" >
-                                                <option value="" disabled selected>Horario</option>
-                                                <option value="" v-for="amb in ambiente">{{amb.tipo}}    {{amb.hora_i}}  {{amb.hora_t}}</option>
+                                                <template v-for="l in horarioList">
+                                                        <option v-bind:value="l.codigo">{{l.descripcion}}</option>
+                                                </template>
                                             </select>
                                             <label for="Horario"></label>
                                         </div>
