@@ -25,7 +25,7 @@ new Vue({
                 "password": this.clave,
                 "tipoUsuario": this.tipo,
                 "condicion": this.condicion,
-                "id_usuario": this.id
+                "idUsuario": this.id
             };
             fetch(url, {
                 method: 'POST',
