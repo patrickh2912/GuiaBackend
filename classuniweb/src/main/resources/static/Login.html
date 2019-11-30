@@ -36,18 +36,18 @@
                                     <div class="row">
                                         <div class="col s12 input-field">
                                             <i class="material-icons prefix">account_circle</i>
-                                            <input id="user_log" type="text" class="validate" maxlength="6">
+                                            <input id="user_log" type="text" class="validate" maxlength="6" v-model="username">
                                             <label for="user_log">Codigo:</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col s12 input-field">
                                             <i class="material-icons prefix">vpn_key</i>
-                                            <input type="password" id="user_pass" class="validate">
+                                            <input type="password" id="user_pass" class="validate" v-model="pass">
                                             <label for="user_pass">Contraseña:</label>
                                         </div>
                                     </div>
-                                    <button id="bLog" class="btn waves-effect waves-red" >Login</button>
+                                    <button id="bLog" class="btn waves-effect waves-red" v-om:click="login">Login</button>
                                     <label for="enlace">Don't you have an account?<a href="#" id="enlace"> Create it now</a></label>
                                 </div>
                             </div>
@@ -126,8 +126,6 @@
 
 
 <script src="vendor/materialize/js/materialize.min.js"></script>
-<script src="assets/js/main.js"></script>
-
-
+<script src="assets/js/app.js"></script>
 </body>
 </html>

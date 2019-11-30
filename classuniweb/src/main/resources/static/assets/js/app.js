@@ -38,7 +38,6 @@ new Vue({
         ).then(response = > {
                 console.log('Success:', response);
             this.confirmacion = 'ingreso correcto';
-            this.asignar_id();
             alert(this.confirmacion + " " + this.id + " " + this.clave);
         })
         },
@@ -82,7 +81,7 @@ new Vue({
     methods:{
         login :function () {
             var vm =this;
-            var url ='http://localhost:8080/generarIdUsuario';
+            var url ='http://localhost:8080/login';
             var data ={
                 "id_usuario":this.username,
                 "password":this.pass
