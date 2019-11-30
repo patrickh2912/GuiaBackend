@@ -33,6 +33,7 @@ new Vue({
         .catch(error => console.error('Error:', error))
         .then(response => {
                 console.log('Success:', response);
+                console.log(vm.cod),
             vm.ambiente = response.lista
         })
         }
