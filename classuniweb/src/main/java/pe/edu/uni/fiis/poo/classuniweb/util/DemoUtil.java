@@ -27,6 +27,9 @@ public class DemoUtil {
         response.setCodHorario(request.getCodHorario());
         response.setFecha(request.getFecha());
         response.setCodAmbiente(request.getCodAmbiente());
+        response.setDia(request.getDia());
+        response.setMotivo(request.getMotivo());
+        response.setIdUsuario(request.getIdUsuario());
         return response;
     }
 /*

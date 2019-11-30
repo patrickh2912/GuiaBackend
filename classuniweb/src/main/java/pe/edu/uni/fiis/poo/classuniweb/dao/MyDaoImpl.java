@@ -1,5 +1,6 @@
 package pe.edu.uni.fiis.poo.classuniweb.dao;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository;
 import pe.edu.uni.fiis.poo.classuniweb.dao.datasource.MyDatasource;
 import pe.edu.uni.fiis.poo.classuniweb.dao.mapper.AmbienteHorarioMapper;
@@ -87,11 +88,10 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
     public Usuario generarIdUsuario(Usuario request) {
         String sql = " select 'U'||trim(to_char( " +
                 "          to_number(substr(max(idUsuario),2,7),'9999999')+1" +
-                "           ,'0000009')) idUsuario, " +
-                " null codUsuario, null password, null dni, null nombreUsuario, null apellidoUsuario, null correo, null tipoUsuario, null condicion" +
+                "           ,'0000009')) idUsuario"+
                  " from usuario ";
-        Usuario usuario = this.jdbcTemplate.queryForObject(sql, new UsuarioMapper());
-        request.setIdUsuario(usuario.getIdUsuario());
+        String idUsuario = this.jdbcTemplate.queryForObject(sql, String.class);
+        request.setIdUsuario(idUsuario);
 
         return request;
     }
@@ -101,7 +101,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
 
         request = generarIdUsuario(request);
 
-        String sql = "insert into persona (idUsuario, \n" +
+        String sql = "insert into usuario (idUsuario, \n" +
                 " codUsuario,\n" +
                 " dni,\n" +
                 " nombreUsuario,\n " +
@@ -206,25 +206,28 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             "       dia, "+
                             "       fecha, " +
                             "       motivo ," +
-                            "       estado ," +
-                            " from pedido " +
-                            " where codHorario = ? " +
-                            " and dia = ? " +
-                            " and  fecha = ? " +
-                            " and codAmbiente = ?", new String[]{request.getCodHorario(),request.getFecha(),request.getCodAmbiente()
+                            "       estado \n" +
+                            " from pedido \n" +
+                            " where codHorario = ? \n" +
+                            " and dia = ? \n" +
+                            " and  fecha = ? \n" +
+                            " and codAmbiente = ?",
+                    new String[]{
+                            request.getCodHorario(),
+                            request.getDia(),
+                            request.getFecha(),
+                            request.getCodAmbiente()
                     }, new PedidoMapper());
 
-        }catch (Exception ex){
+        }catch (EmptyResultDataAccessException ex){
             ex.printStackTrace();
 
             String sql1 = " select 'P'||trim(to_char( " +
                     "          to_number(substr(max(codPedido),2,7),'9999999')+1" +
-                    "           ,'0000009')) codPedido, " +
-                    "  null  idUsuario, null codAmbiente, null codHorario, null dia, null fecha" +
-                    "  null  motivo, null estado " +
+                    "           ,'0000009')) codPedido" +
                     " from pedido";
-            Pedido pedido1 = this.jdbcTemplate.queryForObject(sql1, new PedidoMapper());
-            request.setCodPedido(pedido1.getCodPedido());
+            String coPedido = this.jdbcTemplate.queryForObject(sql1, String.class);
+            request.setCodPedido(coPedido);
 
             String sql =    " insert into pedido (codPedido,\n" +
                     "       idUsuario,\n" +
@@ -233,10 +236,11 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                     "        dia,\n" +
                     "       fecha,\n" +
                     "       motivo,\n" +
-                    "       estado,\n" +
+                    "       estado)\n" +
                     "       values( ? , ? , ? , ? , ?, ? , ?, ?)";
             this.jdbcTemplate.update(sql,
                     new String[]{
+                            request.getCodPedido(),
                             request.getIdUsuario(),
                             request.getCodAmbiente(),
                             request.getCodHorario(),
