@@ -86,9 +86,9 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
     @Override
     public Usuario generarIdUsuario(Usuario request) {
         String sql = " select 'U'||trim(to_char( " +
-                "          to_number(substr(max(idusuario),2,7),'9999999')+1" +
+                "          to_number(substr(max(idUsuario),2,7),'9999999')+1" +
                 "           ,'0000009')) idUsuario, " +
-//                " null codUsuario, null password, null dni, null nombreUsuario, null apellidoUsuario, null correo, null tipoUsuario, null condicion, null usuarioCreacion" +
+                " null codUsuario, null password, null dni, null nombreUsuario, null apellidoUsuario, null correo, null tipoUsuario, null condicion" +
                  " from usuario ";
         Usuario usuario = this.jdbcTemplate.queryForObject(sql, new UsuarioMapper());
         request.setIdUsuario(usuario.getIdUsuario());
