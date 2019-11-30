@@ -7,7 +7,15 @@ public class PedidoRequest {
     private  String motivo;
     private String dia ;
     private  String fecha;
+    private  String estado;
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
     public String getDia() { return dia; }
 

@@ -237,7 +237,6 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                     "       values( ? , ? , ? , ? , ?, ? , ?, ?)";
             this.jdbcTemplate.update(sql,
                     new String[]{
-                            request.getCodPedido(),
                             request.getIdUsuario(),
                             request.getCodAmbiente(),
                             request.getCodHorario(),
