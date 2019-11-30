@@ -236,8 +236,10 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                     "        dia,\n" +
                     "       fecha,\n" +
                     "       motivo,\n" +
-                    "       estado)\n" +
-                    "       values( ? , ? , ? , ? , ?, ? , ?, ?)";
+                    "       estado,\n" +
+                    " usuarioCreacion,\n " +
+                    " fechaCreacion)" +
+                    "       values( ? , ? , ? , ? , ?, ? , ?, ?,USER,CURRENT_TIMESTAMP)";
             this.jdbcTemplate.update(sql,
                     new String[]{
                             request.getCodPedido(),
