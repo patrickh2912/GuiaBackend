@@ -1,4 +1,4 @@
-var a =new Vue({
+new Vue({
     el: '#controlador',
     data: {
         nombre: '',
@@ -45,7 +45,7 @@ var a =new Vue({
     }
 });
 
-var b =new Vue({
+new Vue({
     el:'#acceso',
     data :{
         username:'',
