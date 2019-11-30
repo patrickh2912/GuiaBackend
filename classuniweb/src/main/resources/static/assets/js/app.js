@@ -1,4 +1,4 @@
-new Vue({
+var a =new Vue({
     el: '#controlador',
     data: {
         nombre: '',
@@ -33,45 +33,19 @@ new Vue({
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res = > res.json()
-        ).catch(error = > console.error('Error:', error)
-        ).then(response = > {
+            }).then(res => res.json()
+        ).catch(error => console.error('Error:', error)
+        ).then(response => {
                 console.log('Success:', response);
             this.confirmacion = 'ingreso correcto';
             alert(this.confirmacion + " " + this.id + " " + this.clave);
         })
-        },
-        asignar_id: function () {
-            var vm = this;
-            var url = 'http://localhost:8080/generarIdUsuario';
-            var data = {
-                "nombreUsuario": this.nombre,
-                "apellidoUsuario": this.apellido,
-                "dni": this.dni,
-                "correo": this.correo,
-                "codUsuario": this.codigo_uni,
-                "password": this.clave,
-                "tipoUsuario": this.tipo,
-                "condicion": this.condicion,
-                "id_usuario": this.id
-            };
-            fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            }).then(res = > res.json()
-        ).catch(error = > console.error('Error:', error)
-        ).then(response = > {
-                console.log('Success:', response);
-            vm.crear();
-        })
         }
+
     }
 });
 
-new Vue({
+var b =new Vue({
     el:'#acceso',
     data :{
         username:'',
