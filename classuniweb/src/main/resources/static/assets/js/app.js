@@ -69,8 +69,7 @@ new Vue({
         .catch(error => console.error('Error:', error))
         .then(response => {
                 console.log('Success:', response);
-                alert('Exitoso');
-                this.ventana='busqueda';
+                vm.ventana='busqueda';
         })
         }
     }
