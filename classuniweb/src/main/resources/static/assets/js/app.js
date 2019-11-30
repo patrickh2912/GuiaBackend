@@ -69,9 +69,8 @@ new Vue({
         .catch(error => console.error('Error:', error))
         .then(response => {
                 console.log('Success:', response);
-                if(response!=null){
                     vm.ventana='busqueda';
-                }
+                    console.log(this.username + this.pass)
         })
         }
     }
