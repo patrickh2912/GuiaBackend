@@ -91,9 +91,9 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            <select id="Horario" class="browser-default">
+                                            <select id="Horario" class="browser-default" v>
                                                 <option value="" disabled selected>Horario</option>
-                                                <option value="1"></option>
+                                                <option value="" v-for="amb in ambiente">{{amb.tipo}}    {{amb.hora_i}}  {{amb.hora_t}}</option>
                                             </select>
                                             <label for="Horario"></label>
                                         </div>
@@ -107,7 +107,7 @@
                                     <div class="row">
                                         <div class="col s12" >
                                             <div class="center-align" >
-                                                <a style="width: 50%;height: 100%" class="btn-large pulse"> Buscar</a>
+                                                <a style="width: 50%;height: 100%" class="btn-large pulse" v-on:click="traerHorario"> Buscar</a>
                                             </div>
 
                                         </div>
@@ -128,5 +128,6 @@
 <script src="vendor/materialize/js/materialize.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/busqueda.js"></script>
 </body>
 </html>

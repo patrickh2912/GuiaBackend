@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Buscar</title>
@@ -36,7 +36,7 @@
                                     <div class="input-field col s6">
                                         <select id="cod_ambiente" class="browser-default" v-for="amb in ambiente">
                                             <option value="" disabled selected>Codigo Ambiente</option>
-                                            <option value="">{{amb.tipo}}    {{amb.hora_i}}  {{amb.hora_t}}</option>
+
                                         </select>
                                         <label for="cod_ambiente" ></label>
                                     </div>
@@ -59,7 +59,7 @@
                                 <div class="row">
                                     <div class="col s12" >
                                         <div class="center-align" >
-                                            <a style="width: 50%;height: 100%" class="btn-large pulse"> Buscar</a>
+                                            <a style="width: 50%;height: 100%" class="btn-large pulse" v-on:click="traerHorario"> Buscar</a>
                                         </div>
 
                                     </div>
