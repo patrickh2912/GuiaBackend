@@ -58,12 +58,9 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         try{
             List<Map<String, Object>> filas = this.jdbcTemplate.queryForList(
 
-                    " select codAmbiente, codTipoAmbiente, ubicacion, capacidad, tipoPizarra, tipoMesa, proyector, accesoWifi " +
-                            "from ambiente ");
-            
+                    " select codAmbiente, codTipoAmbiente, ubicacion, capacidad, tipoPizarra, tipoMesa, proyector, accesoWifi from ambiente ");
 
-
-            lista = new ArrayList<Ambiente>();
+            lista = new ArrayList<>();
 
             for (Map<String, Object> fila : filas) {
                 Ambiente p = new Ambiente();
@@ -85,7 +82,6 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
     }
 
     //******************************************************************************************
-
 
     @Override
     public Usuario generarIdUsuario(Usuario request) {
@@ -137,11 +133,15 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
         List<Ambiente> lista = null;
         try{
             List<Map<String, Object>> filas = this.jdbcTemplate.queryForList(
-
-                    " select codAmbiente, codTipoAmbiente, ubicacion, capacidad, tipoPizarra, tipoMesa, proyector, accesoWifi " +
-                            " from ambiente " +
-                            " where codTipoAmbiente = ? ", new String[]{request.getCodTipoAmbiente() }, new AmbienteMapper());
-
+                    "select codAmbiente, " +
+                            "codTipoAmbiente, " +
+                            "ubicacion, " +
+                            "capacidad, " +
+                            "tipoPizarra, " +
+                            "tipoMesa, " +
+                            "proyector, " +
+                            "accesoWifi from ambiente a where a.codtipoambiente = ? and a.codambiente = ?",request.getCodTipoAmbiente(), request.getCodAmbiente());
+            /*,new String[]{ request.getCodTipoAmbiente()}, new AmbienteMapper()*/
             lista = new ArrayList<Ambiente>();
 
             for (Map<String, Object> fila : filas) {
@@ -173,7 +173,8 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                     " select  a.codAmbiente, a.codHorario, a.dia, h.horaInicio, h.horaFinal " +
                             " from ambienteHorario a " +
                             " inner join  horario h on a.codHorario = h.codHorario " +
-                            " WHERE codAmbiente = ? ", new String[]{request.getCodAmbiente() }, new AmbienteHorarioMapper());
+                            " WHERE codAmbiente = ? ", new String[]
+                            {request.getCodAmbiente() });
 
 
             lista = new ArrayList<AmbienteHorario>();

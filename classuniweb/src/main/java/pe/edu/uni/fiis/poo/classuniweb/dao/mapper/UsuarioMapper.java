@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 public class UsuarioMapper  implements RowMapper<Usuario> {
     @Override
-    public Usuario mapRow(ResultSet resultSet, int i)
-            throws SQLException {
+    public Usuario mapRow(ResultSet resultSet, int i) throws SQLException {
         Usuario response = new Usuario();
         response.setIdUsuario(resultSet.getString("idUsuario"));
         response.setPassword(resultSet.getString("password"));
