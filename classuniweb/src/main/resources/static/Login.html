@@ -10,53 +10,120 @@
 
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col s6">
-            <div class="row">
-                <div class="valign-wrapper">
-                    <div class="col s12">
-                        <img src="assets/img/Logo_proyecto.png" id="logo" alt="logo_uni_reserva" class="responsive-img" style="width: 80%">
+<div id="acceso">
+    <div v-show="ventana=='log_in">
+        <div class="container"  >
+            <div class="row" >
+                <div class="col s6">
+                    <div class="row">
+                        <div class="valign-wrapper">
+                            <div class="col s12">
+                                <img src="assets/img/Logo_proyecto.png" id="logo" alt="logo_uni_reserva" class="responsive-img" style="width: 80%">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-            </div>
-        </div>
-        <div class="col s6">
-            <div class="row">
-                <div class="col s12">
-                    <div class="card Large">
-                        <div class="card-content">
-                            <div class="row"><h1 class="">BIENVENIDO</h1></div>
-                            <div class="row">
-                                <blockquote style="border-left: 5px solid #5f50da;">Reservacion al alcance de un click</blockquote>
-                            </div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="user_log" type="text" class="validate" maxlength="6">
-                                    <label for="user_log">Codigo:</label>
+                <div class="col s6">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card Large">
+                                <div class="card-content">
+                                    <div class="row"><h1 class="">BIENVENIDO</h1></div>
+                                    <div class="row">
+                                        <blockquote style="border-left: 5px solid #5f50da;">Reservacion al alcance de un click</blockquote>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <input id="user_log" type="text" class="validate" maxlength="6">
+                                            <label for="user_log">Codigo:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <i class="material-icons prefix">vpn_key</i>
+                                            <input type="password" id="user_pass" class="validate">
+                                            <label for="user_pass">Contraseña:</label>
+                                        </div>
+                                    </div>
+                                    <button id="bLog" class="btn waves-effect waves-red" >Login</button>
+                                    <label for="enlace">Don't you have an account?<a href="#" id="enlace"> Create it now</a></label>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col s12 input-field">
-                                    <i class="material-icons prefix">vpn_key</i>
-                                    <input type="password" id="user_pass" class="validate">
-                                    <label for="user_pass">Contraseña:</label>
-                                </div>
-                            </div>
-                            <button id="bLog" class="btn waves-effect waves-red" >Login</button>
-                            <label for="enlace">Don't you have an account?<a href="#" id="enlace"> Create it now</a></label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div v-show="ventana=='home'">
+        <div class="container">
+            <div class="row">
+                <div class="col s6">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="card Large">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <blockquote style="border-left: 5px solid #8953ca;"> Proceda a seleccionar el tipo de ambiente deseado </blockquote>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <select id="ambiente" class="browser-default">
+                                                <option value="" disabled selected>Tipo Ambiente</option>
+                                                <option value="1">Salon</option>
+                                                <option value="2">Laboratorio</option>
+                                                <option value="3">Auditorio</option>
+                                                <option value="4">Audiovisuales</option>
+                                            </select>
+                                            <label for="ambiente" ></label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <select id="cod_ambiente" class="browser-default">
+                                                <option value="" disabled selected>Codigo Ambiente</option>
+                                                <option value="1">123</option>
+                                            </select>
+                                            <label for="cod_ambiente" ></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <select id="Horario" class="browser-default">
+                                                <option value="" disabled selected>Horario</option>
+                                                <option value="1"></option>
+                                            </select>
+                                            <label for="Horario"></label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12 input-field">
+                                            <input type="date" id="fecha">
+                                            <label for="fecha">Fecha</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s12" >
+                                            <div class="center-align" >
+                                                <a style="width: 50%;height: 100%" class="btn-large pulse"> Buscar</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script src="vendor/materialize/js/materialize.min.js"></script>
 <script src="assets/js/main.js"></script>
