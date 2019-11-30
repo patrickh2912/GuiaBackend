@@ -1,5 +1,5 @@
 new Vue({
-    el:'#busqueda',
+    el:'#busca',
     data:{
         cod:'S4-105',
         ambiente:
