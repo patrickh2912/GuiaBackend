@@ -86,9 +86,9 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
     @Override
     public Usuario generarIdUsuario(Usuario request) {
         String sql = " select 'U'||trim(to_char( " +
-                "          to_number(substr(max(idusuario),2,7),'9999999')+1" +
+                "          to_number(substr(max(idUsuario),2,7),'9999999')+1" +
                 "           ,'0000009')) idUsuario, " +
-//                " null codUsuario, null password, null dni, null nombreUsuario, null apellidoUsuario, null correo, null tipoUsuario, null condicion, null usuarioCreacion" +
+                " null codUsuario, null password, null dni, null nombreUsuario, null apellidoUsuario, null correo, null tipoUsuario, null condicion" +
                  " from usuario ";
         Usuario usuario = this.jdbcTemplate.queryForObject(sql, new UsuarioMapper());
         request.setIdUsuario(usuario.getIdUsuario());
@@ -140,7 +140,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             "tipoMesa, " +
                             "proyector, " +
                             "accesoWifi from ambiente a where a.codtipoambiente = ? and a.codambiente = ?",request.getCodTipoAmbiente(), request.getCodAmbiente());
-            /*,new String[]{ request.getCodTipoAmbiente()}, new AmbienteMapper()*/
+                /*,new String[]{ request.getCodTipoAmbiente()}, new AmbienteMapper()*/
             lista = new ArrayList<Ambiente>();
 
             for (Map<String, Object> fila : filas) {
@@ -203,12 +203,14 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             "       idUsuario, " +
                             "       codAmbiente, " +
                             "       codHorario, " +
+                            "       dia, "+
                             "       fecha, " +
                             "       motivo ," +
                             "       estado ," +
                             " from pedido " +
-                            " where codHorario = ?, " +
-                            " fecha = ? " +
+                            " where codHorario = ? " +
+                            " and dia = ? " +
+                            " and  fecha = ? " +
                             " and codAmbiente = ?", new String[]{request.getCodHorario(),request.getFecha(),request.getCodAmbiente()
                     }, new PedidoMapper());
         }catch (Exception ex){

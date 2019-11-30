@@ -6,8 +6,18 @@ public class Pedido {
     private  String codAmbiente;
     private  String codHorario;
     private  String motivo;
+    private String dia;
     private  String fecha;
     private  String codEstado;
+
+    public String getDia() {
+        return dia;
+
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
 
     public String getCodPedido() {
         return codPedido;

@@ -15,6 +15,7 @@ public class PedidoMapper implements RowMapper<Pedido> {
         response.setIdUsuario(resultSet.getString("idUsuario"));
         response.setCodAmbiente(resultSet.getString("codAmbiente"));
         response.setCodHorario(resultSet.getString("codHorario"));
+        response.setFecha(resultSet.getString("dia"));
         response.setFecha(resultSet.getString("fecha"));
         response.setMotivo(resultSet.getString("motivo"));
         response.setCodEstado(resultSet.getString("codEstado"));
