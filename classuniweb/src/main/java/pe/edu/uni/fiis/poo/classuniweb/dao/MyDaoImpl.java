@@ -213,14 +213,15 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             " and  fecha = ? " +
                             " and codAmbiente = ?", new String[]{request.getCodHorario(),request.getFecha(),request.getCodAmbiente()
                     }, new PedidoMapper());
+
         }catch (Exception ex){
             ex.printStackTrace();
 
             String sql1 = " select 'P'||trim(to_char( " +
                     "          to_number(substr(max(codPedido),2,7),'9999999')+1" +
                     "           ,'0000009')) codPedido, " +
-                    "  null  idUsuario, null codAmbiente, null codHorario, null fecha" +
-                    "  null  motivo, null codEstado " +
+                    "  null  idUsuario, null codAmbiente, null codHorario, null dia, null fecha" +
+                    "  null  motivo, null estado " +
                     " from pedido";
             Pedido pedido1 = this.jdbcTemplate.queryForObject(sql1, new PedidoMapper());
             request.setCodPedido(pedido1.getCodPedido());
@@ -229,14 +230,21 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                     "       idUsuario,\n" +
                     "       codAmbiente,\n" +
                     "       codHorario,\n" +
+                    "        dia,\n" +
                     "       fecha,\n" +
                     "       motivo,\n" +
-                    "       codEstado,\n" +
-                    "       values( ? , ? , ? , ? , ?, ? , 'Confirmado')";
+                    "       estado,\n" +
+                    "       values( ? , ? , ? , ? , ?, ? , ?, ?)";
             this.jdbcTemplate.update(sql,
                     new String[]{
-                            request.getCodPedido(),request.getCodPedido(), request.getIdUsuario(), request.getCodAmbiente(),
-                            request.getCodHorario(), request.getFecha(), request.getMotivo()
+                            request.getCodPedido(),
+                            request.getIdUsuario(),
+                            request.getCodAmbiente(),
+                            request.getCodHorario(),
+                            request.getDia(),
+                            request.getFecha(),
+                            request.getMotivo(),
+                            "RESERVADO"
                     });
             return null;
         }
