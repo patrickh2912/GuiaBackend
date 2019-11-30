@@ -1,34 +1,17 @@
 package pe.edu.uni.fiis.poo.classuniweb.dto.Pedidos;
 
 public class PedidoRequest {
-    private  String codPedido;
     private  String idUsuario;
     private  String codAmbiente;
     private  String codHorario;
     private  String motivo;
     private String dia ;
     private  String fecha;
-    private  String codEstado;
+
 
     public String getDia() { return dia; }
 
     public void setDia(String dia) { this.dia = dia; }
-
-    public String getCodEstado() {
-        return codEstado;
-    }
-
-    public void setCodEstado(String codEstado) {
-        this.codEstado = codEstado;
-    }
-
-    public String getCodPedido() {
-        return codPedido;
-    }
-
-    public void setCodPedido(String codPedido) {
-        this.codPedido = codPedido;
-    }
 
     public String getIdUsuario() {
         return idUsuario;
