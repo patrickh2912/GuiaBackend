@@ -5,7 +5,6 @@ new Vue({
         apellido: '',
         dni: '',
         correo: '',
-        id: '',
         codigo_uni: '',
         clave: '',
         tipo: 'Alumno',
@@ -57,7 +56,7 @@ new Vue({
             var vm =this;
             var url ='http://localhost:8080/login';
             var data ={
-                "id_usuario":this.username,
+                "idUsuario":this.username,
                 "password":this.pass
             };
             fetch(url,{
