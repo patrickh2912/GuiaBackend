@@ -141,7 +141,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             "tipoMesa, " +
                             "proyector, " +
                             "accesoWifi from ambiente a where a.codtipoambiente = ? and a.codambiente = ?",request.getCodTipoAmbiente(), request.getCodAmbiente());
-            /*,new String[]{ request.getCodTipoAmbiente()}, new AmbienteMapper()*/
+                /*,new String[]{ request.getCodTipoAmbiente()}, new AmbienteMapper()*/
             lista = new ArrayList<Ambiente>();
 
             for (Map<String, Object> fila : filas) {
@@ -204,12 +204,14 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             "       idUsuario, " +
                             "       codAmbiente, " +
                             "       codHorario, " +
+                            "       dia, "+
                             "       fecha, " +
                             "       motivo ," +
                             "       estado ," +
                             " from pedido " +
-                            " where codHorario = ?, " +
-                            " fecha = ? " +
+                            " where codHorario = ? " +
+                            " and dia = ? " +
+                            " and  fecha = ? " +
                             " and codAmbiente = ?", new String[]{request.getCodHorario(),request.getFecha(),request.getCodAmbiente()
                     }, new PedidoMapper());
         }catch (Exception ex){
