@@ -6,7 +6,7 @@ new Vue({
         pass: '',
         ventana: 'log',
         ////////////////
-        tipoAmbiente:null,
+        tipoAmbiente: '',
         codAmbienteList: null,
         ambienteHorario: null,
         horarioList: null,
@@ -97,7 +97,7 @@ new Vue({
         .catch(error => console.error('Error:', error))
         .then(response => {vm.codAmbienteList = response;})
         },
-        ///////////////////////////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////
         buscarHorario: function () {
             var vm = this;
             var url = 'https://classuni.getsandbox.com/ambientehorario';
