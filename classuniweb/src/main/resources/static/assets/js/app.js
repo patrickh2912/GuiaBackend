@@ -1,17 +1,30 @@
 new Vue({
     el: '#acceso',
     data: {
+        //////login/////
         username: '',
         pass: '',
         ventana: 'log',
-        cod: 'S4-105',
-        tipoAmbiente:'',
+        ////////////////
+        tipoAmbiente:null,
         ambienteList: null,
         ambienteHorario: null,
-        horarioList: null
-
+        horarioList: null,
+        creaCuenta:null,
+        /////////sign in////////
+        nomUsuario:'',
+        apellidoUsuario:'',
+        dniUsuario:'',
+        correoUsuario:'',
+        codUni:'',
+        clave:null,
+        idUsuario:null,
+        tipo:'Estudiante',
+        condicionUsuario:null,
+        confirmacion:'Ingreso Correcto'
     },
     methods: {
+        ///////////////////////////////////////////////////////////////////////////////////////////
         login: function () {
             var vm = this;
             var url = 'http://localhost:8080/login';
@@ -31,29 +44,48 @@ new Vue({
                             if(response.usuario != null){
                                 vm.ventana='busqueda';
                             }
+                            else {
+                                alert('id o contraseña incorrecta');
+                            }
                         })
                     .catch(error => console.error('Error:', error))
 
         },
-        traerHorario: function () {
+        /*Crearcuenta*////////////////////////////////////////////////////////////////////////////////////
+        crear: function(){
             var vm = this;
-            var url = 'https://classuni.getsandbox.com/ambientehorario';
+            var url = 'http://localhost:8080/RegistrarUsuario';
             var data = {
-                "codAmbiente": vm.cod
+                "nombreUsuario": this.nomUsuario,
+                "apellidoUsuario": this.apellidoUsuario,
+                "dni": this.dniUsuario,
+                "correo": this.correoUsuario,
+                "codUsuario": this.codUni,
+                "password": this.clave,
+                "tipoUsuario": this.tipo,
+                "condicion": this.condicionUsuario,
+                "idUsuario": this.idUsuario
             };
-                                  fetch(url, {
-                                        method: 'POST',
-                                        body: JSON.stringify(data),
-                                        headers:{
-                                            'Content-Type': 'application/json'
-                                        }
-                                    }).then(res => res.json())
-                                        .catch(error => console.error('Error:', error))
-                                        .then(response => {vm.ambiente = response.lista;})
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => {
+                vm.confirmacion = 'ingreso correcto';
+            alert(vm.confirmacion + " " + vm.idUsuario + " " + vm.clave);
+        })
+
         },
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*primer select*/
         buscarAmbiente: function () {
             var vm = this;
-            var url = 'https://classuni.getsandbox.com/ambientehorario';
+            var url = 'http://localhost:8080/CodAmbientes';
             var data = {
                 "codAmbiente": vm.tipoAmbiente
             };
@@ -67,6 +99,7 @@ new Vue({
         .catch(error => console.error('Error:', error))
         .then(response => {vm.ambienteList = response;})
         },
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
         buscarHorario: function () {
             var vm = this;
             var url = 'https://classuni.getsandbox.com/ambientehorario';
@@ -82,66 +115,6 @@ new Vue({
             }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => {vm.horarioList = response;})
-        }
-    }
-});
-
-new Vue({
-    el: '#controlador',
-    data: {
-        nombre: '',
-        apellido: '',
-        dni: '',
-        correo: '',
-        codigo_uni: '',
-        clave: '',
-        tipo: 'Alumno',
-        condicion: 'Activo',
-        confirmacion: null,
-
-
-        cod:'S4-105',
-        ambiente:
-            [
-                {
-                    codigo_amb:'',
-                    tipo_amb:'',
-                    dia_amb:'',
-                    hora_i:'',
-                    hora_f:''
-
-                }
-
-            ]
-
-    },
-    methods: {
-        crear: function () {
-            var vm = this;
-            var url = 'RegistrarUsuario';
-            var data = {
-                "nombreUsuario": this.nombre,
-                "apellidoUsuario": this.apellido,
-                "dni": this.dni,
-                "correo": this.correo,
-                "codUsuario": this.codigo_uni,
-                "password": this.clave,
-                "tipoUsuario": this.tipo,
-                "condicion": this.condicion,
-                "idUsuario": null
-            };
-                        fetch(url, {
-                            method: 'POST',
-                            body: JSON.stringify(data),
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        }).then(res => res.json())
-                        .catch(error => console.error('Error:', error))
-                            .then(response => {
-                        vm.confirmacion = 'ingreso correcto';
-                        alert(this.confirmacion + " " + this.id + " " + this.clave);
-                    })
         }
     }
 });
