@@ -51,6 +51,9 @@ new Vue({
                     .catch(error => console.error('Error:', error))
 
         },
+        signin : function(){
+            this.ventana='sign_in';
+        },
         /*Crearcuenta*////////////////////////////////////////////////////////////////////////////////////
         crear: function(){
             var vm = this;

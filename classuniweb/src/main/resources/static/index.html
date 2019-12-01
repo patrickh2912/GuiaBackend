@@ -48,7 +48,7 @@
                                         </div>
                                     </div>
                                     <button id="bLog" class="btn waves-effect waves-red" v-on:click="login">Login</button>
-                                    <label for="enlace">Don't you have an account?<a href="#" id="enlace"> Create it now</a></label>
+                                    <label for="enlace">Don't you have an account?<a href="#" id="enlace" v-on:click="signin"> Create it now</a></label>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="input-field col s6">
                                             <select id="cod_ambiente" class="browser-default" v-model="ambienteHorario" v-on:change="buscarHorario()" >
-                                                <template v-for="ambiente in codAmbienteList">
+                                                <template v-for ="ambiente in codAmbienteList">
                                                     <option v-bind:value="ambiente.codAmbiente">{{ambiente.codAmbiente}}</option>
                                                 </template>
                                             </select>
@@ -110,6 +110,95 @@
                                         <div class="col s12" >
                                             <div class="center-align" >
                                                 <button style="width: 50%;height: 100%" class="btn-large pulse" > Buscar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div v-show="ventana==sign_in">
+        <div class="container" id="controlador">
+            <div class="row">
+                <div class="s12" >
+                    <div class="col s3" >
+                        <div class="row">
+                            <div class="s12">
+                                <div class="row">
+                                    <img src="assets/img/Logo_proyecto.png" alt="" class="responsive-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="s12">
+                                <div class="row">
+                                    <div class="card small cyan lighten-3">
+                                        <div class="card-content">
+                                            <blockquote> Proceda a insertar sus datos  </blockquote>
+                                            <p>No espere mas para acceder a los grandes beneficios de Classuni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col s1">
+                    </div>
+                    <div class="col s8">
+                        <div class="row">
+                            <div class="s12">
+                                <div class="row">
+                                    <div class="card Large cyan lighten-5">
+                                        <div class="card-content">
+                                            <div class="row"><h5>Registrar</h5></div>
+                                            <div class="row">
+
+                                                <div class="col s6 input-field">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="Name" type="text" class="validate" maxlength="30" v-model="nomUsuario">
+                                                    <label for="Name">Nombre:</label>
+                                                </div>
+                                                <div class="col s6 input-field">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="Last_name" type="text" class="validate" maxlength="30" v-model="apellidoUsuario">
+                                                    <label for="Last_name">Apellido:</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s6 input-field">
+                                                    <i class="material-icons prefix">perm_identity</i>
+                                                    <input id="DNI" type="text" class="validate" maxlength="30" v-model="dniUsuario">
+                                                    <label for="DNI">DNI:</label>
+                                                </div>
+                                                <div class="col s6 input-field">
+                                                    <i class="material-icons prefix">email</i>
+                                                    <input id="correo" type="email" class="validate" maxlength="30" v-model="correoUsuario">
+                                                    <label for="correo">Correo:</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col s6 input-field">
+                                                    <i class="material-icons prefix">school</i>
+                                                    <input id="codigo_uni" type="text" class="validate" maxlength="10" v-model="codUni">
+                                                    <label for="codigo_uni">Codigo UNI:</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s6 input-field">
+                                                    <i class="material-icons prefix">vpn_key</i>
+                                                    <input id="pass" type="password" class="validate" maxlength="30" v-model="clave">
+                                                    <label for="pass">Contraseña:</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="center-align"><button class="btn-large waves-effect light-blue darken-4" v-on:click="crear" >Crear cuenta</button></div>
+
                                             </div>
                                         </div>
                                     </div>
