@@ -5,7 +5,7 @@ new Vue({
         username: '',
         pass: '',
         ventana: 'log',
-        ////////////////
+
         tipoAmbiente: '',
         codAmbienteList: null,
         ambienteHorario: null,
@@ -93,9 +93,8 @@ new Vue({
                 headers:{
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => {vm.codAmbienteList = response;})
+            }).then(res => res.json()).catch(error => console.error('Error:', error))
+        .then(response => {vm.codAmbienteList = response})
         },
  ////////////////////////////////////////////////////////////////////////////////////////////////////////
         buscarHorario: function () {
