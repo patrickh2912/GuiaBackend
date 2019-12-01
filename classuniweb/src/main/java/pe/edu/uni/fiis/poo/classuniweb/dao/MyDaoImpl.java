@@ -139,7 +139,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                             "tipoPizarra, " +
                             "tipoMesa, " +
                             "proyector, " +
-                            "accesoWifi from ambiente a where a.codtipoambiente = ? and a.codambiente = ?",request.getCodTipoAmbiente(), request.getCodAmbiente());
+                            "accesoWifi from ambiente a where a.codtipoambiente = ? ",request.getCodTipoAmbiente());
                 /*,new String[]{ request.getCodTipoAmbiente()}, new AmbienteMapper()*/
             lista = new ArrayList<Ambiente>();
 
