@@ -69,16 +69,17 @@ new Vue({
                 "condicion": this.condicionUsuario,
                 "idUsuario": this.idUsuario
             };
-            fetch(url, {
+            fetch(url,{
                 method: 'POST',
                 body: JSON.stringify(data),
-                headers: {
+                headers:{
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
         .then(response => {
-            alert(vm.confirmacion + " " + vm.idUsuario + " " + vm.clave);
+                console.log(response);
         })
+        .catch(error => console.error('Error:', error))
 
         },
 
