@@ -85,7 +85,7 @@
                                             <select id="cod_ambiente" class="browser-default" v-model="ambienteHorario" v-on:change="buscarHorario()" >
                                                 <option value="" disabled selected>Codigo Ambiente</option>
                                                 <template v-for="l in codAmbienteList">
-                                                    <option v-bind:value="l.codAmbiente">{{l.codAmbiente}}</option>
+                                                    <option v-bind:value="l.ubicacion">{{l.codAmbiente}}</option>
                                                 </template>
 
                                             </select>
