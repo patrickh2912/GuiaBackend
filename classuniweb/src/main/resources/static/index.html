@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="input-field col s6">
                                             <select id="cod_ambiente" class="browser-default" v-model="ambienteHorario" v-on:change="buscarHorario()" >
-                                                <template v-for ="ambiente in codAmbienteList">
+                                                <template v-for ="ambiente in ambienteList">
                                                     <option v-bind:value="ambiente.codAmbiente">{{ambiente.codAmbiente}}</option>
                                                 </template>
                                             </select>
