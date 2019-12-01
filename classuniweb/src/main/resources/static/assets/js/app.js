@@ -7,7 +7,7 @@ new Vue({
         ventana: 'log',
         ////////////////
         tipoAmbiente:null,
-        ambienteList: null,
+        codAmbienteList: null,
         ambienteHorario: null,
         horarioList: null,
         creaCuenta:null,
@@ -72,10 +72,8 @@ new Vue({
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
+            }).then(res => res.json()).catch(error => console.error('Error:', error))
         .then(response => {
-                vm.confirmacion = 'ingreso correcto';
             alert(vm.confirmacion + " " + vm.idUsuario + " " + vm.clave);
         })
 
@@ -87,7 +85,7 @@ new Vue({
             var vm = this;
             var url = 'http://localhost:8080/CodAmbientes';
             var data = {
-                "codAmbiente": vm.tipoAmbiente
+                "codTipoAmbiente": vm.tipoAmbiente
             };
             fetch(url, {
                 method: 'POST',
@@ -97,7 +95,7 @@ new Vue({
                 }
             }).then(res => res.json())
         .catch(error => console.error('Error:', error))
-        .then(response => {vm.ambienteList = response;})
+        .then(response => {vm.codAmbienteList = response;})
         },
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         buscarHorario: function () {
