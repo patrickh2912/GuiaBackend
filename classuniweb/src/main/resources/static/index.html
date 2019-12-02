@@ -122,6 +122,10 @@
                                         <div class="col s12" >
                                             <div class="center-align" >
                                                 <button style="width: 50%;height: 100%" class="btn-large pulse" v-model="dato" v-on:click="mostrarPedido"> Ver</button>
+                                            </div>
+                                        </div>
+                                        <div class="col s12" >
+                                            <div class="center-align" >
                                                 <button style="width: 50%;height: 100%" class="btn-large pulse" > Buscar</button>
                                             </div>
                                         </div>
@@ -139,7 +143,16 @@
                                     <div class="col s12">
                                         Informacion del pedido
                                         <ul>
-                                            {{dato}}
+                                            Usuario:{{nomUsuario}}
+                                        </ul>
+                                        <ul>
+                                            Correo:{{correoUsuario}}
+                                        </ul>
+                                        <ul>
+                                            Capacidad: {{dato}}
+                                        </ul>
+                                        <ul>
+                                            Codigo: {{tipoAmbiente}}
                                         </ul>
                                     </div>
                                 </div>
