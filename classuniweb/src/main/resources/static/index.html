@@ -101,9 +101,18 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col s12 input-field">
+                                        <div class="col s6 input-field">
                                             <input type="date" id="fecha" v-model="fecha">
                                             <label for="fecha">Fecha</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col s6 input-field">
+                                            <select  class="browser-default" v-model="dia">
+                                                <template v-for="d in horarioList">
+                                                    <option v-bind:value="d.dia">{{d.dia}} </option>
+                                                </template>
+                                            </select>
                                         </div>
                                     </div>
 
