@@ -121,8 +121,7 @@ new Vue({
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
-        .then(response => {vm.horarioList = response.lista;
-        vm.dia=response.lista.dia})
+        .then(response => {vm.horarioList = response.lista;})
         },
         ///////////////////////////////////////////
       /*  consultar: function () {
