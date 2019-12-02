@@ -106,7 +106,8 @@ new Vue({
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
-        .then(response => {vm.ambienteList = response.lista})
+        .then(response => {vm.ambienteList = response.lista;
+        vm.mostrarPedido();})
         },
  ////////////////////////////////////////////////////////////////////////////////////////////////////////
         buscarHorario: function () {
