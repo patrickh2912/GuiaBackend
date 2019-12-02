@@ -116,6 +116,13 @@ new Vue({
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
         .then(response => {vm.horarioList = response.lista;})
+        },
+        consultar: function () {
+            var vm =this;
+            var url = 'http://localhost:8080/HacerPedido'
+            var data ={
+
+            }
         }
     }
 });
