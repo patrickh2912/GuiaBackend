@@ -27,7 +27,8 @@ new Vue({
         codHorarioPedido:'',
         dia:'',
         fecha:'',
-        codAmbiente:''
+        codAmbiente:'',
+        ambiente:null
 
     },
     methods: {
@@ -123,6 +124,22 @@ new Vue({
             }).then(res => res.json()).catch(error => console.error('Error:', error))
         .then(response => {vm.horarioList = response.lista;})
         },
+        /////////////////////////////////////////////
+        mostrarPedido :function(){
+            var vm = this;
+            var url = 'http://localhost:8080/ObtenerDatosAmbiente';
+            var data = {
+                "codAmbiente": vm.ambienteHorario
+            };
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json()).catch(error => console.error('Error:', error))
+        .then(response => {vm.ambiente = response;})
+        }
         ///////////////////////////////////////////
       /*  consultar: function () {
             var vm =this;

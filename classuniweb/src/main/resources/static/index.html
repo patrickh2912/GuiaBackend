@@ -137,9 +137,12 @@
                                 <div class="row">
                                     <div class="col s12">
                                         Informacion del pedido
-                                        <template v-for ="ambiente in ambienteList">
-                                            <h5>{{ambiente.codAmbiente}}</h5>
-                                        </template>
+                                        <ul>
+                                            {{ambiente.ubicacion}}
+                                        </ul>
+                                        <ul>
+                                            {{ambiente.capacidad}}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
