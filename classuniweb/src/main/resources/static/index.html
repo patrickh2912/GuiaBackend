@@ -82,7 +82,7 @@
                                             <label for="ambiente" ></label>
                                         </div>
                                         <div class="input-field col s6">
-                                            <select id="cod_ambiente" class="browser-default" v-model="ambienteHorario;dato" v-on:change="buscarHorario()" >
+                                            <select id="cod_ambiente" class="browser-default" v-model="ambienteHorario" v-on:change="buscarHorario()" >
                                                 <template v-for ="ambiente in ambienteList">
                                                     <option v-bind:value="ambiente.codAmbiente">{{ambiente.codAmbiente}}</option>
                                                 </template>
@@ -121,6 +121,7 @@
                                     <div class="row">
                                         <div class="col s12" >
                                             <div class="center-align" >
+                                                <button style="width: 50%;height: 100%" class="btn-large pulse" v-model="dato" v-on:click="mostrarPedido"> Ver</button>
                                                 <button style="width: 50%;height: 100%" class="btn-large pulse" > Buscar</button>
                                             </div>
                                         </div>
