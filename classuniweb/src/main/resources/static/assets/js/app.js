@@ -148,7 +148,7 @@ new Vue({
         vm.dato.proyector=response.ambiente.proyector;
         vm.dato.wifi=response.ambiente.accesoWifi;
         vm.dato.tipoMesa=response.ambiente.tipoMesa;
-        vm.dato.pizarra=response.ambiente.tipoPizarra})
+        vm.dato.pizarra=response.ambiente.tipoPizarra;})
         }
         ///////////////////////////////////////////
       /*  consultar: function () {
