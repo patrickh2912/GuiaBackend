@@ -139,7 +139,7 @@ new Vue({
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
-        .then(response => {vm.ambiente = response;})
+        .then(response => {vm.ambiente = response.ambiente;})
         }
         ///////////////////////////////////////////
       /*  consultar: function () {
