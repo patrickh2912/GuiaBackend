@@ -5,7 +5,7 @@ new Vue({
         username: '',
         pass: '',
         ventana: 'log',
-/////////////////////////////
+/////////////////////////////busqueda
         tipoAmbiente: '',
         ambienteList: null,
         /////////////////
@@ -22,7 +22,13 @@ new Vue({
         idUsuario:null,
         tipo:'Estudiante',
         condicionUsuario:null,
-        confirmacion:'Ingreso Correcto'
+        confirmacion:'Ingreso Correcto',
+        /////////////////////pedido////
+        codHorarioPedido:'',
+        dia:'',
+        fecha:'',
+        codAmbiente:''
+
     },
     methods: {
         ///////////////////////////////////////////////////////////////////////////////////////////
@@ -117,12 +123,17 @@ new Vue({
             }).then(res => res.json()).catch(error => console.error('Error:', error))
         .then(response => {vm.horarioList = response.lista;})
         },
-        consultar: function () {
+        ///////////////////////////////////////////
+      /*  consultar: function () {
             var vm =this;
-            var url = 'http://localhost:8080/HacerPedido'
+            var url = 'http://localhost:8080/HacerPedido';
             var data ={
+                "codHorario":vm.codHorarioPedido,
+                "dia":"",
+                "fecha":vm.fecha,
+                "codAmbiente":vm.ambienteHorario
 
             }
-        }
+        }*/
     }
 });
