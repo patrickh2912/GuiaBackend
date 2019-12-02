@@ -28,7 +28,7 @@ new Vue({
         dia:'',
         fecha:'',
         codAmbiente:'',
-        capacidad:null
+        dato:null
 
     },
     methods: {
@@ -139,7 +139,7 @@ new Vue({
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
-        .then(response => {vm.capacidad = response.ambiente.capacidad;})
+        .then(response => {vm.dato = response.ambiente.capacidad;})
         }
         ///////////////////////////////////////////
       /*  consultar: function () {
