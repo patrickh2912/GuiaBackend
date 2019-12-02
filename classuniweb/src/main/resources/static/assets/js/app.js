@@ -5,10 +5,11 @@ new Vue({
         username: '',
         pass: '',
         ventana: 'log',
-
+/////////////////////////////
         tipoAmbiente: '',
         ambienteList: null,
-        ambienteHorario: null,
+        /////////////////
+        ambienteHorario: '',
         horarioList: null,
         creaCuenta:null,
         /////////sign in////////
@@ -103,7 +104,7 @@ new Vue({
  ////////////////////////////////////////////////////////////////////////////////////////////////////////
         buscarHorario: function () {
             var vm = this;
-            var url = 'https://classuni.getsandbox.com/ambientehorario';
+            var url = 'http://localhost:8080/ambienteHorario';
             var data = {
                 "codAmbiente": vm.ambienteHorario
             };
@@ -113,8 +114,7 @@ new Vue({
                 headers:{
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
+            }).then(res => res.json()).catch(error => console.error('Error:', error))
         .then(response => {vm.horarioList = response.lista;})
         }
     }

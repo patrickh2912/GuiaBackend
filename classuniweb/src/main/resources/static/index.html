@@ -94,7 +94,7 @@
                                         <div class="col s12">
                                             <select id="Horario" class="browser-default" >
                                                 <template v-for="l in horarioList">
-                                                        <option v-bind:value="l.codigo">{{l.descripcion}}</option>
+                                                        <option v-bind:value="l.codHorario">{{l.dia}} {{l.horaInicio}}</option>
                                                 </template>
                                             </select>
                                             <label for="Horario"></label>
