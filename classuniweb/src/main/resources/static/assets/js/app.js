@@ -151,7 +151,7 @@ new Vue({
         vm.dato.pizarra=response.ambiente.tipoPizarra;})
         }
         ///////////////////////////////////////////
-      /*  consultar: function () {
+       consultar: function () {
             var vm =this;
             var url = 'http://localhost:8080/HacerPedido';
             var data ={
@@ -159,8 +159,25 @@ new Vue({
                 "dia":vm.dia,
                 "fecha":vm.fecha,
                 "codAmbiente":vm.ambienteHorario
-
             }
-        }*/
+             fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            }).then(res => res.json()).catch(error => console.error('Error:', error))
+        .then(response => {
+                if(response.pedido != null){
+                                alert('Reserva exitosa');
+                            }
+                            else {
+                                alert('Ambiente ocupado');
+                            }
+
+        })
+
+
+        }
     }
 });
