@@ -156,7 +156,7 @@ new Vue({
             var url = 'http://localhost:8080/HacerPedido';
             var data ={
                 "codHorario":vm.codHorarioPedido,
-                "dia":"",
+                "dia":vm.dia,
                 "fecha":vm.fecha,
                 "codAmbiente":vm.ambienteHorario
 
