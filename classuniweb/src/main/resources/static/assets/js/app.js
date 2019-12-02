@@ -25,6 +25,7 @@ new Vue({
         confirmacion:'Ingreso Correcto',
         /////////////////////pedido////
         codHorarioPedido:'',
+        motivo:'urgente',
         dia:'',
         fecha:'',
         codAmbiente:'',
@@ -158,7 +159,9 @@ new Vue({
                 "codHorario":vm.codHorarioPedido,
                 "dia":vm.dia,
                 "fecha":vm.fecha,
-                "codAmbiente":vm.ambienteHorario
+                "codAmbiente":vm.ambienteHorario,
+                "motivo":vm.motivo,
+                "idUsuario":vm.username
             };
            fetch(url,{
                method: 'POST',
