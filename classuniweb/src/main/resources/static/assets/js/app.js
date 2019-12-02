@@ -28,7 +28,13 @@ new Vue({
         dia:'',
         fecha:'',
         codAmbiente:'',
-        dato:null
+        dato:{
+            capacidad:'',
+            wifi:'',
+            tipoMesa:'',
+            proyector:'',
+            pizarra:''
+        }
 
     },
     methods: {
@@ -138,7 +144,11 @@ new Vue({
                     'Content-Type': 'application/json'
                 }
             }).then(res => res.json()).catch(error => console.error('Error:', error))
-        .then(response => {vm.dato = response.ambiente.capacidad;})
+        .then(response => {vm.dato.capacidad = response.ambiente.capacidad;
+        vm.dato.proyector=response.ambiente.proyector;
+        vm.dato.wifi=response.ambiente.accesoWifi;
+        vm.dato.tipoMesa=response.ambiente.tipoMesa;
+        vm.dato.pizarra=response.ambiente.tipoPizarra})
         }
         ///////////////////////////////////////////
       /*  consultar: function () {
