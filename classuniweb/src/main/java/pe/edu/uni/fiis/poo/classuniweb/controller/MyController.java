@@ -93,6 +93,14 @@ public class MyController {
         return response;
     }
 
+    @PostMapping(value = "/ObtenerDatosAmbiente",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public AmbienteResponse obtenerDatosAmbiente (@RequestBody AmbienteRequest request){
+            AmbienteResponse response = this.myService.obtenerDatosAmbiente(request);
+            return response;
+    }
+
 
 /*
          @PostMapping(value = "/sign",

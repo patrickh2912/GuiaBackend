@@ -9,6 +9,7 @@ import pe.edu.uni.fiis.poo.classuniweb.domain.Pedido;
 import pe.edu.uni.fiis.poo.classuniweb.domain.Usuario;
 import pe.edu.uni.fiis.poo.classuniweb.dto.Ambientes.AmbienteHorarioRequest;
 import pe.edu.uni.fiis.poo.classuniweb.dto.Ambientes.AmbienteRequest;
+import pe.edu.uni.fiis.poo.classuniweb.dto.Ambientes.AmbienteResponse;
 import pe.edu.uni.fiis.poo.classuniweb.dto.LoginSign.*;
 import pe.edu.uni.fiis.poo.classuniweb.dto.Pedidos.PedidoRequest;
 import pe.edu.uni.fiis.poo.classuniweb.dto.Pedidos.PedidoResponse;
@@ -68,6 +69,13 @@ public class MyServiceImpl implements MyService{
         return response;
     }
 
+    @Override
+    public AmbienteResponse obtenerDatosAmbiente(AmbienteRequest request) {
+        Ambiente ambiente = this.myDao.obtenerDatosAmbiente(DemoUtil.mapToAmbiente(request));
+        AmbienteResponse response = new AmbienteResponse();
+        response.setAmbiente(ambiente);
+        return response;
+    }
 
     //******************************************************************************************
     public UsuarioResponse removerUsuario(UsuarioRequest request) {

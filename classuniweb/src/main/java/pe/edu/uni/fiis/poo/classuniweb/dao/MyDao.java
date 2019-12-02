@@ -22,5 +22,6 @@ public interface MyDao {
     Pedido HacerPedido(Pedido request);
     UsuarioResponse SingUpUsuario (UsuarioRequest request);
     Usuario removerUsuario(Usuario request);
+    Ambiente obtenerDatosAmbiente (Ambiente request);
 
 }

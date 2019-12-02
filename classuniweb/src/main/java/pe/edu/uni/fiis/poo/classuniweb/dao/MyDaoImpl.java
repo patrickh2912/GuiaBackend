@@ -37,7 +37,7 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
                     "       nombreUsuario, " +
                     "       apellidoUsuario, " +
                     "       correo ," +
-                    "    condicion ," +
+                    "       condicion ," +
                     "      tipoUsuario from Usuario " +
                     " where idUsuario = ? " +
                     " and password = ? ",
@@ -257,6 +257,26 @@ public class MyDaoImpl extends MyDatasource implements MyDao{
     }
 
     //******************************************************************************************
+
+    @Override
+    public Ambiente obtenerDatosAmbiente(Ambiente request) {
+        Ambiente ambiente = null;
+        try{
+            ambiente = this.jdbcTemplate.queryForObject(
+                    "select codAmbiente, codTipoAmbiente, ubicacion, capacidad, tipoPizarra, tipoMesa,  proyector, accesoWifi" +
+                            " from ambiente where codAmbiente = ?",
+            new String[]{
+                    request.getCodAmbiente()
+            }, new AmbienteMapper());
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return ambiente;
+        }
+
+        return ambiente;
+    }
+
+
     //U000001
 
     //******************************************************************************************

@@ -23,5 +23,6 @@ public interface MyService {
     List<AmbienteHorario> ObtenerHorarios(AmbienteHorarioRequest request);
     UsuarioResponse registrarUsuario (UsuarioRequest request);
     UsuarioResponse removerUsuario(UsuarioRequest request);
+    AmbienteResponse obtenerDatosAmbiente (AmbienteRequest request);
 
 }
