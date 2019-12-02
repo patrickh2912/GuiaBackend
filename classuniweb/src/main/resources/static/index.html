@@ -100,19 +100,21 @@
                                             <label for="Horario"></label>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col s6 input-field">
-                                            <input type="date" id="fecha" v-model="fecha">
-                                            <label for="fecha">Fecha</label>
+                                    <div class="col s12">
+                                        <div class="row">
+                                            <div class="col s6 input-field">
+                                                <input type="date" id="fecha" v-model="fecha">
+                                                <label for="fecha">Fecha</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col s6 input-field">
-                                            <select  class="browser-default" v-model="dia">
-                                                <template v-for="d in horarioList">
-                                                    <option v-bind:value="d.dia">{{d.dia}} </option>
-                                                </template>
-                                            </select>
+                                        <div class="row">
+                                            <div class="col s6 input-field">
+                                                <select  class="browser-default" v-model="dia">
+                                                    <template v-for="d in horarioList">
+                                                        <option v-bind:value="d.dia">{{d.dia}} </option>
+                                                    </template>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -135,6 +137,9 @@
                                 <div class="row">
                                     <div class="col s12">
                                         Informacion del pedido
+                                        <template v-for ="ambiente in ambienteList">
+                                            <h5>{{ambiente.codAmbiente}}</h5>
+                                        </template>
                                     </div>
                                 </div>
                             </div>
